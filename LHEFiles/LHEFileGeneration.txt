@@ -1,0 +1,128 @@
+For the private production of Signal MC for the DispalcedTop Analysis [add CADI-LINE]
+#the following steps have been performed. The MADGRAPH5_aMC@NLO generator is used to generate
+the process at the Leading Order + ISR.
+The Universal FeynRules Output "DisplacedTopUDD" is a private model used to work with the
+RPV-MSSM model. The analysis is lookign for dusplacedTop Quark. The mean decay length of the neutralino
+decaying into a top and a virtual stop is given in the LHE File
+
+################################################################################
+################################################################################
+
+generation_LHE with merging tune for the ISR jet:
+================================================
+
+cd /opt/sbg/cms/ui2_data1/blochd/CMSSW_10_6_20_FLY/src
+export V0_CMS_SW_DIR=/cvmfs/cms.cern.ch
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+export SCRAM_ARCH=slc7_amd64_gcc700
+eval `scramv1 runtime -sh`
+
+export PYTHONPATH=$PYTHONPATH:/opt/glite/lib64/python:/opt/fpconst/lib/python2.4/site-packages
+export PYTHONPATH=${PYTHONPATH}:${GLITE_LOCATION}/lib64
+cmsenv
+
+cd ../../flyingtop/MG5_aMC_v2_9_15
+export PATH=$PWD/HEPTools/lhapdf6/bin/:$PATH
+export PYTHIA8DATA=$PWD/HEPTools/pythia8/share/Pythia8/xmldoc/
+export LHAPDF_DATA_PATH=$PWD/HEPTools/lhapdf6/share/LHAPDF
+cd ..
+
+python MG5_aMC_v2_9_15/bin/mg5_aMC
+
+# run MadGraph
+import model DisplacedTopUDD --modelname
+generate    p p  > sl2+ sl2-   / h01 h02 a0 n1 n2 n3 n4 @0
+add process p p  > sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4 @1
+display processes
+
+output merging -f
+
+# replace the param and run cards
+# in the param card: fix the muon and neutralize masses
+# in the run card: need 100000 events
+#                  tune the xqcut value
+!cp param_card_for_merging.dat merging/Cards/param_card.dat
+!cp run_card_for_merging.dat   merging/Cards/run_card.dat
+
+launch
+1 # use Pythia8 !
+# return return
+
+!ls merging/HTML
+!mv merging/HTML/run_01/tag_1_PY8_plots merging/HTML/run_01/tag_1_PY8_plots_smu400_neu300_xqcut10
+
+# change the run and/or param cards, re-lauch and re-mv accordingly
+
+# analyze the merging
+exit
+
+# under sbgli2:
+cd central_qCut_djr_plots
+scp -r sbgui2:/opt/sbg/cms/ui2_data1/blochd/flyingtop/merging/HTML/run*/tag_1_PY8_plots_smu* .
+ls
+cd tag_1_PY8_plots_smu400_neu300_xqcut10
+gnuplot central_qCut_djr_plots.gnuplot
+evince central_qCut_djr_plots.pdf
+
+# and check that the transition between 0jet and 1jet is smooth for each DJR plot
+
+
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+
+generation_LHE with ISR jet:
+===========================
+
+cd /opt/sbg/cms/ui2_data1/blochd/CMSSW_10_6_20_FLY/src
+export V0_CMS_SW_DIR=/cvmfs/cms.cern.ch
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+export SCRAM_ARCH=slc7_amd64_gcc700
+eval `scramv1 runtime -sh`
+
+export PYTHONPATH=$PYTHONPATH:/opt/glite/lib64/python:/opt/fpconst/lib/python2.4/site-packages
+export PYTHONPATH=${PYTHONPATH}:${GLITE_LOCATION}/lib64
+cmsenv
+
+cd ../../flyingtop/MG5_aMC_v2_9_15
+export PYTHIA8DATA=$PWD/HEPTools/pythia8/share/Pythia8/xmldoc/
+export LHAPDF_DATA_PATH=$PWD/HEPTools/lhapdf6/share/LHAPDF
+cd ..
+
+# in practice, many LHE files are produced, for various smuon and neutralino masses and neutralino lifetimes
+# as listed in flyingtop/LHE_PROD_smu200.txt, ..., LHE_PROD_smu500.txt
+# here is just an example:
+
+python MG5_aMC_v2_9_15/bin/mg5_aMC
+
+# run MadGraph
+import model DisplacedTopUDD --modelname
+
+generate    p p  > sl2+ sl2-   / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @1
+add process p p  > sl2+ sl2-   / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @2
+add process p p  > sl2+ sl2-   / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @3
+add process p p  > sl2+ sl2-   / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @4
+add process p p  > sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @5
+add process p p  > sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @6
+add process p p  > sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t d s    / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @7
+add process p p  > sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ > n2 mu+, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl2- > n2 mu-, n2 > t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~) @8
+
+output RPV_PROD_smu300_neu250 -f            # -f to overwrite the previous directory
+
+!cp param/param_card_smu300_neu250.dat RPV_PROD_smu300_neu250/Cards/param_card.dat
+!cp run_card.dat                       RPV_PROD_smu300_neu250/Cards/.
+launch
+0
+0
+exit
+
+cd RPV_PROD_smu300_neu250/Events/run_01
+gzip -d unweighted_events.lhe.gz
+
+# change the lifetime (in mm)
+python3 ../../../change_lhe_ct.py unweighted_events.lhe 100.
+mv unweighted_events.lhe.changed ../../../../LHEfiles_13TeV/RPV_smu300_neu250_ctau100.lhe
+
+mv unweighted_events.lhe         ../../../../LHEfiles_13TeV/RPV_smu300_neu250.lhe
+cd ../../..
