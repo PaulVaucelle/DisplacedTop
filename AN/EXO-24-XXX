@@ -1,0 +1,1333 @@
+\documentclass{cernatlasnote}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{placeins}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{indentfirst}
+% \usepackage{biblatex}
+\usetikzlibrary{calc}
+\title{\centering Search for displaced top quark from a new massive particle decay in the tracker of CMS}
+\author{CMS collaboration}
+\date{\today}
+
+% Here is the information that will be entered in the title page
+\DocAuthors{A.Paul Vaucelle }
+\DocCheckedBy{ D.~Person \\ E.~Person}
+\DocApprovedBy{F.~Person \\ G.~Person }
+\EDMSDocNo{EXO-24-ZZZZ}
+\EDMSDocId{123456}
+\draftversion{0.1}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+A search for massive long-lived particle (LLP) decaying to a top quark in proton-proton collisions at $\sqrt{s}$ = 13 TeV is presented in this paper. New long-lived particles are predicted in several extensions of the Standard Model (SM). In the R-parity violated Minimal SuperSymmetric Model (RPV-MSSM) considered, the lightest SuperSymmetric particle (LSP) is long-lived and decays into a top and a virtual stop quark which couples to a down and strange quark pair. Machine learning is used to distinguish signal displaced tracks from Standard Model prompt tracks for the reconstruction of displaced vertices.
+\end{abstract}
+
+% Make the review table at the bottom of the title page
+\vfill
+\makereviewtable
+\clearpage
+
+% Short documentes dont always need a Table of Content / Figures / Tables, so comment out what is not needed
+\begingroup
+\color{black}
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak
+\listoftables
+\endgroup
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{SEC: INTRO}
+ Many extensions of the Standard Model (SM) predict the existence of long-lived particles through weak couplings, high masses making the production for these new particle to be highly suppressed. However, long-lived particles are highly motivated by  R-Parity Violated Minimal SuperSymmetry Model (RPV-MSSM) \cite{RPV1, RPV2, RPV3, RPV4}, Split-SUSY \cite{SPLITSUSY, SPLITSUSY2, SPLITSUSY3, SPLITSUSY4, SPLITSUSY5, SPLITSUSY6}, weakly interacting massive particles (WIMPs) \cite{WIMP1,WIMP2,WIMP3}, Gauge Mediated supersymmetry breaking (GMSB) \cite{GMSB1,GMSB2, GMSB3}, hidden sector \cite{HS1, HS2, HS3}
+
+ In this paper, we search for long-lived neutral SUSY particles decaying in the tracker into SM particles, as allowed by the RPV-MSSM. These long lived SUSY particles are pair-produced from p-p collisions at a center-of-mass energy of 13 TeV in 2016, 2017 and 2018 corresponding to an integrated luminosity of 137 $fb^{-1}$. This analysis looks for displaced vertices coming from the decay of the pair-produced long-lived particles where the latter decay into SM particles producing jets and tracks in the tracker volume. The event topology, as well as the tracks and the secondary displaced vertices can be used to discriminate the displaced signature from SM backgrounds. The analysis is focused on the pair-production of neutral long-lived SUSY particles in the RPV-MSSM and does not address the direct pair-production of neutralinos.
+
+ Searches about displaced jets/vertices at $\sqrt{13}$ TeV have been reported by ATLAS \cite{ATLAS-CONF-2018-003} and \cite{DISJETSATLAS} and CMS \cite{DISJETSCMS} in an inclusive approach, where the displaced vertices are mainly search in the pixel detector due to the tracking efficiency and masses mainly at the TeV scale. Limits ... and cross section ...\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{MC simulation}
+\label{SEC: MC}
+
+\subsection{Signal}
+The development of the search is performed using privately simulated signal samples. These samples are generated using the MADGRAPH5\_aMC@NLO generator \cite{MAD} at leading order (LO) plus 1 jet from an initial state radiation. The generation is produced using a private model described in Appendix.\ref{APP: GEN}. This model allows the decay of the neutralino into SUSY and SM particles following the RPV-MSSM. In this analysis, we focus on the pair-production of neutral long-lived SUSY particles as shown in Fig.\ref{fig:Feyn}.\\
+
+The signal process is characterized by the production of a $Z/\gamma^*$ boson from p-p collisions at the LHC. Then, the boson produced decays into a pair of sleptons, being the Next-to-Lightest SuperSymmetric-Particle (NLSP), where the considered sleptons are the smuons. Since the slepton is the NLSP, it decays into a muon and the Lightest-SuperSymmetric-Particle (LSP) that is the neutralino. The branching ratio for this decay is set to 100\% in order to reduce the complexity of the model. The neutralino can only be a bino-like neutralino to allow the decay through the $\lambda^{''}$ RPV-coupling to lead to violation of the baryonic number and the production of a top quark in the final state. The sleptons are short-lived particle leaving  prompt leptons as final state particles of the signal process that can be use to trigger the signal events. Since the muons can be easily triggered on and easier to identify, the muon channel is chosen. The selectron channel can be added in the analysis in the future and the stau channel could also be considered from theory but is not studied in this analysis due to the complexity of the tau decay and the consequences on the event reconstruction.\\
+
+The long-lived neutralino is assumed to decay into the tracker volume into a virtual stop and a top quark. The latter follows its SM decay channel where both hadronic and leptonic decays are considered for the W boson. The stop couples to SM quarks with the $\lambda^{''}$ RPV-coupling where the specific decay is given by $\lambda^{''}_{312}$ with 3,1 and 2 being the generations of quark considered. The stop couples to a down and a strange quark giving a heavy hadronic activity to the final state of the signal process. No mixing between particles of different generations is considered in the mixing matrices of sleptons and squarks, and mass states are in an equal proportion of left-handed and right-handed states also to reduce the complexity of the model.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Feynmann/smuprod.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Feynmann/Chi01decay.png}
+\caption{\label{fig:Feyn} Neutralino production and decay channel}
+\end{figure}
+
+For our signal, we consider a wide range of combination of values between the following parameters :
+the mass of the smuon $M_{\Tilde{\mu}}$, the mass of the neutralino $M_{\Tilde{\chi}_{0}^{1}}$, the proper lifetime of the neutralino $\beta\gamma c\tau$, the RPV coupling $\lambda^{''}_{312}$ and the mass of the virtual stop $M_{\Tilde{t}}$. All envisaged combinations are described in Table.\ref{tab:TAB1}. The upper limit on $M_{\Tilde{\mu}}$ is due to a low cross section ($\sim 0.1fb$) but could be extended with more data-taking and the lower limit is due to the production of a top quark in the decay channel of the neutralino and also from previous experimental limits \cite{ATLAS1,ATLAS2,ATLAS3,CMS1,ATLAS4,CMS2,ATLAS5}. The cross-section $\sigma$ of the pair-production of $\Tilde{\mu}$ is entirely determined by $M_{\Tilde{\mu}}$ as shown in Fig.\ref{fig:CrossX}. 
+ For simplicity, all other RPV-couplings are null. 
+
+ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  $\beta\gamma c\tau$(cm) & $M_{\Tilde{\mu}}$ (GeV) &  $M_{\Tilde{\chi}_{0}^{1}}$ (GeV) &  $M_{\Tilde{t}}$(GeV) &  $\lambda^{''}_{312}$ \\
+  \hline
+\textbf{0.1 to 100} & \textbf{200 to 500}  & \textbf{180 to 480}  & 1000 &  $10^{-3}$ to $10^{-1}$\\
+  \hline
+\end{tabular}
+    \caption{Masses of the SUSY particles and the associated couplings for the different benchmarks in order to probe the tracker volume}
+    \label{tab:TAB1}
+\end{table}
+
+
+The phase space is described in more details in Fig.\ref{fig:CrossX} and Fig.\ref{fig:bgctau}. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/PhaseSPace/SmuonXsec_Msmuon.png}
+\caption{\label{fig:CrossX} Cross-section of the smuons pair production as a function of the smuon mass}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/PhaseSPace/Meandecaylength.png}
+\caption{\label{fig:bgctau} Mean decay length of the neutralino as a function of the neutralino mass and the coupling. The black lines are the limits of the volume of the tracker of CMS. The tracker volume puts constraints on the phase space to be probed.}
+\end{figure}
+[THEN SHOW GENRETOR LEVEL VARIABLES??]
+
+\FloatBarrier
+
+\subsection{Background}
+
+For the development of the analysis, MC samples generated in the Summer20 campaign for 2018 stored in the MiniAODv2 format, MiniAOD format that is used for the whole analysis. These samples are listed  for each year of Run 2 in the Tables [\ref{tab:MC2016}], [\ref{tab:MC2017}] and [\ref{tab:MC2018}]. [to be changed]
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Sample 2016 & No. events & $\sigma$ [pb] \\
+  \hline
+\small /TTJets\_DiLept\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 546996 & 53.07\\
+  \small/TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 960000 & 88.3\\
+  \small /ST\_tW\_top\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 963768 &  10.8908 \\
+  \small /ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 920153 & 10.8707 \\
+  \small/DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 1836747 & 15910.0\\
+  \small/DYJetsToLL\_M-50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 800000 & 5379\\
+  \small/WWTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 780000 & 11.09\\
+  \small/WZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 994094 & 6.535\\
+  \small/ZZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 &  780170 & 3.676 \\
+  \small/ttWJetsToLNu\_5f\_EWK\_TuneCP5\_13TeV\_amcatnlo-pythia8 & 825000 & 0.290 \\
+  \small/TTZToLL\_5f\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 660694 & 0.05188\\
+  \small/TTToHadronic\_TuneCP5CR1\_13TeV-powheg-pythia8  & 1067000 & 687.1\\
+  \small/TTWW\_TuneCP5\_13TeV-madgraph-pythia8  & 570000 &  0.006992\\
+
+  \hline
+\end{tabular}
+    \caption{Background MC samples fro 2016 with their associated number of events and cross-sections}
+    \label{tab:MC2016}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Sample 2017 & No. events & $\sigma$ [pb] \\
+  \hline
+\small /TTJets\_DiLept\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 546996 & 53.07\\
+  \small/TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 960000 & 88.3\\
+  \small /ST\_tW\_top\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 963768 &  10.8908 \\
+  \small /ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 920153 & 10.8707 \\
+  \small/DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 1836747 & 15910.0\\
+  \small/DYJetsToLL\_M-50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 800000 & 5379\\
+  \small/WWTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 780000 & 11.09\\
+  \small/WZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 994094 & 6.535\\
+  \small/ZZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 &  780170 & 3.676 \\
+  \small/ttWJetsToLNu\_5f\_EWK\_TuneCP5\_13TeV\_amcatnlo-pythia8 & 825000 & 0.290 \\
+  \small/TTZToLL\_5f\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 660694 & 0.05188\\
+  \small/TTToHadronic\_TuneCP5CR1\_13TeV-powheg-pythia8  & 1067000 & 687.1\\
+  \small/TTWW\_TuneCP5\_13TeV-madgraph-pythia8  & 570000 &  0.006992\\
+
+  \hline
+\end{tabular}
+    \caption{Background MC samples for 2017 with their associated number of events and cross-sections}
+    \label{tab:MC2017}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Sample 2018 & No. events & $\sigma$ [pb] \\
+  \hline
+\small /TTJets\_DiLept\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 546996 & 53.07\\
+  \small/TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 960000 & 88.3\\
+  \small /ST\_tW\_top\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 963768 &  10.8908 \\
+  \small /ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_TuneCP5\_13TeV-powheg-pythia8 & 920153 & 10.8707 \\
+  \small/DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 1836747 & 15910.0\\
+  \small/DYJetsToLL\_M-50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 800000 & 5379\\
+  \small/WWTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 780000 & 11.09\\
+  \small/WZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 994094 & 6.535\\
+  \small/ZZTo2Q2L\_mllmin4p0\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 &  780170 & 3.676 \\
+  \small/ttWJetsToLNu\_5f\_EWK\_TuneCP5\_13TeV\_amcatnlo-pythia8 & 825000 & 0.290 \\
+  \small/TTZToLL\_5f\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 660694 & 0.05188\\
+  \small/TTToHadronic\_TuneCP5CR1\_13TeV-powheg-pythia8  & 1067000 & 687.1\\
+  \small/TTWW\_TuneCP5\_13TeV-madgraph-pythia8  & 570000 &  0.006992\\
+
+  \hline
+\end{tabular}
+    \caption{Background MC samples fro 2018 with their associated number of events and cross-sections}
+    \label{tab:MC2018}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Datasets}
+\label{SEC: DATASET}
+Since the experimental signature has two prompt leptons, this analysis can make use of several datasets depending on the flavor of the prompt leptons. For the muon channel :
+\begin{itemize}
+    \item SingleMuon
+    \item DoubleMuon
+\end{itemize}
+For the electron channel : 
+\begin{itemize}
+    \item SingleElectron, called EGamma in 2018
+    \item DoubleElectron
+\end{itemize}
+
+For each dataset,  the set of trigger that are used is given in Table\ref{tab:TRIGGER2016} for 2016, in Table\ref{tab:TRIGGER2017} for 2017 and in Table\ref{tab:TRIGGER2018} for 2018.
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|p{12cm}|}
+  \hline
+  \rowcolor{lightgray} 
+  Dataset & Trigger \\
+  \hline
+  SingleMuon & HLT\_IsoMu27\_v\\
+  \hline
+  DoubleMuon & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL(\_DZ)\_v \textbf{OR} HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL(\_DZ)\_v \textbf{OR} HLT\_TkMu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_(DZ)\_v  \textbf{OR} HLT\_IsoMu24\_v \textbf{OR}  HLT\_IsoTkMu24\_v \\
+  \hline
+  SingleElectron &  HLT\_Ele27\_WPTight\_Gsf\_v \\
+  \hline
+  DoubleElectron &  HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v \textbf{OR} HLT\_Ele27\_WPTight\_Gsf\_v\\
+  \hline
+\end{tabular}
+    \caption{Trigger for the datasets of 2016}
+    \label{tab:TRIGGER2016}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|p{12 cm}|}
+  \hline
+  \rowcolor{lightgray} 
+  Dataset & Trigger \\
+  \hline
+  SingleMuon & HLT\_IsoMu27\_v\\
+  \hline
+  DoubleMuon & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v \textbf{OR} HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v  \textbf{OR} HLT\_IsoMu24\_v\\
+  \hline
+  SingleElectron &  HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v \\
+  \hline
+  DoubleElectron & HLT\_Ele32\_WPTight\_Gsf\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v \\
+  \hline
+\end{tabular}
+    \caption{Trigger for the datasets of 2017}
+    \label{tab:TRIGGER2017}
+\end{table}
+
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|p{12 cm}|}
+  \hline
+  \rowcolor{lightgray} 
+  Dataset & Trigger \\
+  \hline
+  SingleMuon & HLT\_IsoMu24\_v\\
+  \hline
+  DoubleMuon & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v \textbf{OR} HLT\_IsoMu24\_v\\
+  \hline
+  SingleElectron &  HLT\_Ele32\_WPTight\_Gsf\_v \\
+  \hline
+  DoubleElectron &  HLT\_Ele32\_WPTight\_Gsf\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v \textbf{OR} HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v \\
+  \hline
+\end{tabular}
+    \caption{Trigger for the datasets of 2018}
+    \label{tab:TRIGGER2018}
+\end{table}
+[ADD TABLE GLOBALT TAGS FOR EACH PERIODS data and MC + golden json files]\\
+
+
+\FloatBarrier
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Object Selection}
+\label{SEC: OBJSEL}
+    Particle-Flow \cite{CMS:2017yfk} is the algorithm used by the CMS experiment to reconstruct objects by  using the information of all sub-detectors. Selections are applied on the following reconstructed objects : on muons for the muon channel, electrons for the electron channel, on both leptons when looking at the electron-muon channel (used for background estimation) and jets for all channels. The analysis is looking for prompt leptons with potential displaced leptons coming from heavy-flavour hadrons decay from the decay channel of the neutralino. Plus, the prompt leptons can overlap with the displaced jets increasing the complexity of the experimental signature of the signal. All these constraints have been taken into account for the selections of the different objects and of the events.
+    \subsection{Muons}
+        Muons are reconstructed using the information from the tracker and the muon chambers. In this analysis, muons are required to be in the acceptance of the muon detector,$|\eta| <$ 2.4. All muons are required to have a $p_T > $  3 GeV. In the muon channel, there are two prompt muons coming from the decay of the smuons. These prompt muons are required to have constraints on their impact parameters, to be of opposite charge and also to follow the muonID and Isolation given in the Table.\ref{tab:MUONSEL}.
+        
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Selection & Prompt & Other \\
+  \hline
+  GlobalMuon & True & True\\
+  $|\eta|$ & 2.4 & 2.4\\
+  $p_T$ & 3 & 3\\
+  $|d_{dxy}|$ & 0.1 cm & none\\
+  $|d_{dz}|$ & 0.2 cm & none\\
+  MediumID & True & True\\
+  TightID & True & False\\
+  TkIsoTight & True & False\\
+  \hline
+\end{tabular}
+    \caption{Selections for the Muons in the muon channel}
+    \label{tab:MUONSEL}
+\end{table}
+[Add distribution of Muons at gen level]
+
+Concerning muon corrections, the Rochester Correction \cite{ROCCOR} have been applied on the Monte-Carlo samples according to the Muon POG recommendations in order to correct the momentum scale and resolution of muons.
+[complete this part]
+
+    In addition to the Rochester Correction, the scale factors for the muns are computed according to the Muon POG [add ref : https://indico.cern.ch/event/1247210/sessions/478562/attachments/2587866/4465075/MuonPOG\_tutorial\_part2.pdf][add ref : https://gitlab.cern.ch/cms-muonPOG/spark\_tnp/] using the Spark T\&P tool fro all three years of Run 2. This tool is used to correct the discrepancy between data and MC for the muons but also for the trigger used (only for the muon channel). Scale factors are given in bins of $p_T$ and $\eta$.
+
+    [May be a more detailed part for the muon POG for the review :]
+    In order to match the online and offline selection of the analysis, the following selection is applied for the computation of the scale factors with Spark on the Drell-Yan resonance:\\
+    \begin{enumerate}
+        \item for 2016 post-APV :
+        \item for 2016 pre-APV : 
+        \item for 2017 :
+        \item for 2018 :  $"|probe\_dxy|<0.1 and abs(probe\_dz)<0.2 and abs(tag\_dxy)<0.1 and abs(tag\_dz)<0.2 and TightID == 1 and  TkIsoTight == 1  and tag\_pt>25 and probe\_pt>10  and tag\_abseta<2.4 and probe\_abseta<2.4 and (tag\_HLT\_IsoMu24\_v ==1 or tag\_HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v == 1  ) and pair\_mass > 10"$
+    \end{enumerate}
+
+The final scale factor is defined as the combination of three efficiencies :
+\begin{equation}
+    SF^{\mu} = \epsilon^{\mu}_{TRK} *\epsilon^{\mu}_{ID|TRK} * \epsilon^{\mu}_{ISO|ID} * \epsilon^{\mu}_{Trigger|ISO}
+\end{equation}
+
+where :
+\begin{itemize}
+    \item $\epsilon^{\mu}_{TRK}$ is the tracking efficiency really close to unity set to 1 by the MUON POG
+    \item $\epsilon^{\mu}_{ID|TRK}$ is the ratio of muons passing a given Identification flag with respect to the number of tracker muons (to follow the computation of the Muon POG)
+    \item $\epsilon^{\mu}_{ISO|ID}$ is the ratio of muons passing a given Isolation flag with respect to the number of muon passing the Identification flag
+    \item $\epsilon^{\mu}_{Trigger|ISO}$ is the ratio of muons passing the trigger requirement with respect to the number of muons passing the Isolation criteria (and Identification flag).
+\end{itemize}
+These efficiencies are computed for each combination of ID/ISO/trigger of muons indicated in the Table.\ref{tab:MUONSEL}.
+[add ref :  https://twiki.cern.ch/twiki/bin/viewauth/CMS/MuonReferenceEffsRun2 \\
+https://twiki.cern.ch/twiki/bin/viewauth/CMS/MuonReferenceEffs2018]
+
+
+    \subsection{Electrons}
+
+    Electrons are objects that have a dedicated tracking algorithm since their track can be modify by possible bremsstrahlung. The Gaussian Sum Filter tracking [add ref] algorithm takes into account the information of the tracker and the ECAL to reconstruct the track of electrons taking into account the bremsstrahlung.
+
+    These prompt electrons in the electron channel are required to have constraints on their impact parameters, to be of opposite charge and also to follow the electronID and Isolation given in the Table.\ref{tab:ELSEL}.
+
+    \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Selection & $Prompt_{|\eta|<1.479}$ & $Prompt_{|\eta|> 1.556}$ & Others \\
+  \hline
+  $|\eta|$ & 1.479 & 2.4 & 2.4 \\
+  $p_T$ & 10 & 10 & 10\\
+  $|d_{dxy}|$ & 0.05 cm  & 0.10 cm & none\\
+  $|d_{dz}|$ & 0.10 cm & 0.20 cm & none\\
+  TightID & True & True & ???\\
+  \hline
+\end{tabular}
+    \caption{Selections for the prompt Electrons in the electron channel. The TightID refers to "cutBasedElectronID-Fall17-94X-V2-tight" working point from the EGamma POG.}
+    \label{tab:ELSEL}
+\end{table}
+
+
+[Add distribution of Electrons at gen level]\\
+talk about the electron corrections
+
+    \subsection{Jets}
+        \label{SUB:JETS}
+
+    This analysis aims at looking at Run 2 and Run 3 data. This involves different types of jets between the two data-taking periods. For Run 2, AK4PF jets are used where AK4PF indicates the clustering of Particle-Flow candidates through the anti-$k_T$ algorithm \cite{ANTIKT} with a distance parameter of 0.4.The selection applied on jets are summarized in Table.\ref{tab:JETSEL}. Further selections will be applied on jets for the event reconstruction.
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  Selection & Value \\
+  \hline
+  $p_T$ & 20 \\
+  TightLepVetoId & True \\
+  \hline
+\end{tabular}
+    \caption{Selections for the jets}
+    \label{tab:JETSEL}
+\end{table}
+
+The TightID refers to the recommendation of the Jets POG\cite{TIGHTJET}. As a note, one could wonder the effect of the TightJetID on displaced vertices and on the final vertex reconstruction efficiency since jets are the main constituents of this physics process. It has been checked that the TightJetID and TightJetIDLepVeto select more than 90\% and 80\% respectively of the jets and that the final reconstruction efficiency of the vertices is not affected by this selection on the jets. The event reconstruction and vertex reconstruction algorithm are then robust with respect to the number of jets in the final state.\\
+
+[add information about th jet energy correction,everything that is put in the python file for jets corrections]
+
+
+[Add distribution of Jets at gen level]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Event Selection}
+\label{SEC: EVTSEL}
+    This analysis can take advantage of the two prompt leptons to select the events compared to previous analyses that are mainly looking at an only-hadronic final state [add ref]. One lepton is always selected by the online trigger selection and the second lepton can come from the dilepton trigger mentioned in Table.\ref{tab:TRIGGER2018} or it can also be selected offline following a specific selection on the invariant mass of the two leptons selected, detailed below. The $\tau$ channel is not studied since its decay can significantly change the experimental signature and the use of leptonic triggers would be compromised as well as jets from the $\tau$ decay could overlap with the displaced jets and potentially in due a bias in the reconstruction of the event detailed in section\ref{SEC: EVTREC}. In this analysis, the two prompt leptons must be of opposite charge since the neutralino is considered to be of Dirac nature.
+    Adding to the selections introduced on prompt leptons in the previous section and the trigger mentioned in section\ref{SEC: DATASET}, Concerning the selection, the first selected muon is required to have a $p_T > 25$ GeV and the second muon selected is required to have a $p_T > 10$ GeV. The invariant mass of the two selected muons is required to be above 10 GeV in order to reduce the amount of low-mass resonances in the search. 
+
+    This first Online+Offline selection allows to reduce backgrounds up to 90\% but it is not enough in order to observe the signal in any part of the phase space. Therefore, a step further is implemented in order to reduce the background at event level using the topology of the event.
+
+    A multivariate analysis selection based on a Boosted Decision Tree (BDT) from the Toolkit for Multivariate Analysis (TMVA) \cite{TMVA} is implemented. The list of variables given as an input is given in Table \ref{tab:EVTBDTVAR}. The distribution of the input variables between signal and backgrounds are given in the Appendix.\ref{APP: EVTBDT}. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|m{10 cm}|}
+  \hline
+  \rowcolor{lightgray} 
+  Variable & Definition \\
+  \hline
+  MET & Total Missing Transverse Energy \\
+  \hline
+  $H_T$ & Sum of the $p_T$ of the jets that passed through the selections in Table.\ref{tab:JETSEL}\\
+  \hline
+  $S_T$ & Sum of the $p_T$ of the muons that passed through the selections  for \textbf{Prompt} muons in Table.\ref{tab:MUONSEL}  \\
+  \hline
+  nJets & Total number of jets that have passed the selections in Table.\ref{tab:JETSEL} \\
+  \hline
+  nPromptMuons &  Total number of prompt muons that have passed the selections for \textbf{Prompt} muons in Table.\ref{tab:MUONSEL} \\
+  \hline
+  nAllMuons & Total number of muons that have passed the selections for \textbf{other} muons in Table.\ref{tab:MUONSEL} \\
+  % \hline
+  % $M_{\mu\mu}$ & Invariant mass of the two selected prompt muons from Section\ref{SEC: EVTSEL} [add table?]\\
+  \hline
+  NTracks & Total number of tracks in the event \\
+  % \hline
+  % $p_{T_{l1}}$ & Muon leading $p_T$ \\
+  % \hline
+  % $p_{T_{l2}}$ & Muon sub-leading $p_T$ \\
+  \hline
+  $p_{T_{j1}}$ & Jet leading $p_T$ \\
+  \hline
+  $p_{T_{j2}}$ & Jet sub-leading $p_T$ \\
+    \hline
+  $p_{T_{j1}}$ & Jet leading $\eta$ \\
+  \hline
+  $p_{T_{j2}}$ & Jet sub-leading $\eta$ \\
+  % \hline
+  % $\Delta R_{l_1-l_2}$ & $\Delta R$ between the leading  and sub-leading muons \\
+  % \hline
+  % $\Delta \phi_{l_1-l_2}$ & $\Delta \phi$ between the leading  and sub-leading muons \\
+  % \hline
+  %  $\Delta \eta_{l_1-l_2}$ & $\Delta \eta$ between the leading  and sub-leading muons \\
+   \hline
+  $\Delta R_{j_1-j_2}$ & $\Delta R$ between the leading  and sub-leading jets \\
+  \hline
+  $\Delta \phi_{j_1-j_2}$ & $\Delta \phi$ between the leading  and sub-leading jets \\
+  \hline
+   $\Delta \eta_{j_1-j_2}$ & $\Delta \eta$ between the leading  and sub-leading jets \\
+   \hline
+  % $\Delta R_{l_1-j_1}$ & $\Delta R$ between the leading muon and leading jet \\
+  % \hline
+  % $\Delta R_{l_1-j_2}$ & $\Delta R$ between the leading muon and sub-leading jet \\
+  % \hline
+  % $\Delta R_{l_2-j_1}$ & $\Delta R$ between the sub-leading muon and leading jet \\
+  % \hline
+  % $\Delta R_{l_2-j_2}$ & $\Delta R$ between the sub-leading muon and sub-leading jet \\
+  \hline
+  Hemi1 njet nomu & Number of jets from the first hemisphere having a $\Delta R$ above 0.4 with respect to the two prompt leptons \\
+    \hline
+  Hemi1 $p_T$ &  $p_T$ of the first reconstructed hemisphere\\
+  \hline
+  Hemi1 eta &  $\eta$ of the first reconstructed hemisphere\\
+  \hline
+  Hemi1 phi & $\phi$ of the first reconstructed hemisphere\\
+  \hline 
+  Hemi1 nTrks & (to be removed) number of tracks of the first reconstructed hemisphere\\
+  \hline
+  Hemi2 njet nomu & Number of jets from the second hemisphere having a $\Delta R$ above 0.4 with respect to the two prompt leptons\\
+  \hline
+  Hemi2 pt & $p_T$ of the second reconstructed hemisphere\\
+  \hline
+  Hemi2 eta & $\eta$ of the second reconstructed hemisphere\\
+  \hline
+  Hemi2 phi & $\phi$ of the second reconstructed hemisphere\\
+  \hline
+  Hemi2 nTrks & (to be removed) number of tracks of the second reconstructed hemisphere\\
+  \hline
+  Mass of Hemisphere 1 & Mass of the first reconstructed hemisphere using the jets \\
+  \hline
+  Mass of Hemisphere 2 & Mass of the second reconstructed hemisphere using the jets \\
+  \hline
+
+\end{tabular}
+    \caption{Input variables for the Event selection BDT}
+    \label{tab:EVTBDTVAR}
+\end{table}
+\FloatBarrier
+
+    It is clear that the topology of the event depends on the point in the phase space of the signal that is chosen where the signal can be very displaced (dozens of centimeters down to a millimeter) and also the mass spectra can change the kinematic of the event considering the signal samples mentioned in Table.\ref{tab:TAB1}.\\
+
+    ...\\
+
+    One important feature of the signal is the $t\Bar{t}$-like experimental signature where two b-jets are produced in the event. B-tagging is applied on slightly displaced vertices depending on the decay length of the B-Hadron. But b-tagging is not built to work on highly displaced jets (dozens of centimeters) and we show in Fig. the discrepancy in the behavior of the B-tagging DeepJet algorithm [add ref ] with respect to the decay length and the mass spectra in Fig. and Fig. respectively. Therefore, B-Tagging is not a variable that is used in this analysis since its efficiency depends on the point in the phase space we want to look for.\\
+    
+    [ADD all infos about the EVT BDT SEL OR CUT]
+
+    \subsubsection{Dependence of the Event selection BDT with respect to the phase space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Event Reconstruction}
+\label{SEC: EVTREC}
+  The final state of the neutralino signal being heavily hadronic, the event reconstruction is based on the jets from the decay of the neutralino. These jets can come from the coupling between the stop and the down and strange quarks as well as the SM decay of the top. No particular restrictions are applied on the decay of the W boson from the top, both leptonic and hadronic decays are considered in this analysis and leptons originating from the W or heavy-hadron flavour decays are also considered in the event reconstruction. The event topology and kinematics depends on the phase space of the signal studied: the smuon and neutralino masses, as well as the lifetime of the neutralino.\\
+
+  In the signal, neutrinos are pair-produced from the decay of the smuons, and decay further away in the tracker. Both neutralinos tend to be back-to-back in azimuth ($\phi$) but close in $\eta$, see Fig. \ref{fig:Geometry}, meaning that there are two clusters of tracks, mainly coming from jets, back-to-back in $\phi$. The 3D-space is then divided into two hemispheres, one for each neutralino. A precaution is applied as the prompt muons can overlap with the displaced jets, so the momentum-vector of the prompt leptons are discarded in this building procedure to avoid any bias, then jets are re-ordered by decreasing value of $p_T$. The hemispheres are defined as follows : 
+    \begin{itemize}
+        \item From the collections of jets ordered by decreasing value of $p_T$, the first jet is taken as the first axis of a first hemisphere
+        \item Then, by looking at the other jets, if the $\Delta R$ between the jet and the first axis is below 1.5, we add the momentum-vectors of the two jets to correct on the first axis, else we build a second axis.
+        \item  Finally, we iterate over all the jets and assign them to one among both hemispheres and recompute the hemisphere momentum vector for each new jet
+        \item If any jets is not involved in this procedure, => nothing is currently done in the analysis
+    \end{itemize}
+
+The goal of the analysis is to reconstruct one vertex per hemisphere.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Topology/dPhineuneu.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Topology/dEtaneuneu.png}
+\caption{\label{fig:dRNEUNEU} $\Delta \phi$ between the two generated neutralinos on the left and $|\Delta \eta|$  of the two generated neutralinos on the right}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Topology/topo.png}
+\caption{\label{fig:Geometry} Mass plots of the V0 candidates from a $t\Bar{t}$ sample}
+\end{figure}
+\FloatBarrier
+
+\subsection{Quality of the reconstructed axes}
+
+    The quality of the reconstructed axes can be estimated by comparing the generated axis of the neutralino and the axis of the reconstructed hemisphere associated. The axis reconstruction depends on the number of jets available, their ordering (by decreasing value of $p_t$) and also the $\Delta R$ criteria that is imposed for the jets to axis association ($\Delta R <$1.5).
+    The $\Delta R$ distribution between the reconstructed axis of the hemisphere and the generated neutralino is given in Fig. \ref{fig:AXESQUALITY} as well as a function of the phase space. The plot on the left shows that about 10\% of the hemispheres are not well reconstructed. This can happen for many reasons: the decay length of the neutralino is very high reaching the end of the tracker volume, hence leaving not many jets in the tracker. It can also happened that there is a mis-association of the jets between the two hemispheres if the two neutralinos are closer than $\Delta R $ = 3, therefore inducing a bias in the hemisphere building procedure. The plot on the right indicates that for higher $\Delta M_{\Tilde{\mu}-\Tilde{\chi}^{1}_{0}} = M_{\Tilde{\mu}} - M_{\Tilde{\chi}^{1}_{0}}$, the hemisphere reconstruction efficiency is slightly lower, still reaching 85\%, while for lower $\Delta M_{\Tilde{\mu}-\Tilde{\chi}^{1}_{0}}$, this efficiency reaches 95\%. In the former case where the $\Delta M_{\Tilde{\mu}-\Tilde{\chi}^{1}_{0}}$ is lower, jets from the decay of the neutralino are less energetic, hence not passing the selections inducing a lack of information to complete the building procedure. Finally, the top from the neutralino can be produced at large angles with respect to the neutralino, therefore, the jets from the top are still used for the building procedure but are pointing towards the top direction and not the neutralino one. All these effects can explain why the hemisphere building procedure is not reaching 100\%even though the efficiency remains high.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Topology/drgenreco.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/Topology/eff_dR_trueaxis.png}
+\caption{\label{fig:AXESQUALITY} $\Delta R$ between the generated neutralino and the reconstructed axis}
+\end{figure}
+
+
+\FloatBarrier
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Selection of displaced Tracks}
+\label{SEC: DISTRK}
+    This analysis aims at reconstructing displaced vertices from the decay of a neutral long-lived particle. An important part of this analysis is devoted to the selection of displaced tracks coming from the decay of the neutralino. The displacement is dependant on the signal sample that we want to look for, therefore the selections are  applied as independently as possible from the phase space.\\
+
+    The background coming from the SM is mostly prompt backgrounds with prompt tracks associated to them but secondary displaced vertices can be observed due to different sources such as $V^0$ candidates, photon conversions and other nuclear interactions within the material budget of the tracker of CMS.
+
+    In this analysis, we are aiming to first reduce the amount of tracks coming from these backgrounds (after the event selection mentioned in section.\ref{SEC: EVTSEL}) then select the displaced tracks. In the CMS Software (CMSSW), there are already collections containing the $V^0$ candidates and the photon conversions. These collections will not be directly used for selections but to control the selections that are applied below.
+
+    
+    \subsection{Tracks from $V^0$ candidates}
+        $V^0$ candidates tands for two hadrons : the $K^0_S$ meson and the $\Lambda^{0}$ baryon. These hadrons are produced from the hadronisation of the strange quark. They have a long lifetime (about $10^{-10}$ s) and produce  displaced vertices with a lower track multiplicity (2-tracks vertices) compared to signal vertices (between 6 and 10 jets). Therefore, these vertices can be identified and the tracks associated to these vertices are removed from the workflow and will not be used later.
+        
+        However, this is done in a specific way in this analysis. As stated above, CMSSW already gives a collection [add ref] of the $V^0$ candidates but there are not directly used. Using a copy of the CMSSW code to built the $V^0$ candidates and changing it to MiniAOD, see Appendix.\ref{APP: COVMAT} and \ref{APP: FIRSTHIT} , we reconstruct the  $V^0$ candidates using the Kalman Filter \cite{KVF} by looking at any pair of tracks of opposite signs, potentially signal tracks.\\
+        If all the conditions from CMSSW are passed and a $V^0$ candidate is built, the tracks associated to this candidate are removed from the analysis considering a tighter selection in mass compared to the CMSSW collection, see Fig.\ref{fig:V0Candidates}.\\
+
+        The monitoring of this method is done by comparing the CMSSW collection of $V^0$ candidates and the collection that we build in the workflow, see Fig[figure ratio plots] but also by comparing these two collections between data and MC.
+
+        From the collection of reconstructed $V^0$ candidates (not the one of CMSSW), we get 1.1 $V^0$ candidates per signal and $t\Bar{t}$ event.
+
+        [add the necessary figures]
+        ...\\
+        
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/V0Candidates/K0.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/V0Candidates/L0.png}
+\caption{\label{fig:V0Candidates} Mass plots of the V0 candidates from a $t\Bar{t}$ sample}
+\end{figure}
+
+
+        
+    \subsection{Tracks from Secondary Interactions}
+
+        In order to remove the maximum of background tracks, the procedure of removing tracks associated to $V^0$ candidates vertices is extended to all kind of secondary interactions happening in the tracker volume, photon conversions and nuclear interactions with the material budget of CMS. The same algorithm is therefore used but now considering all kind of pair of tracks with selections detailed in Table[secInt sel], that are specific for the reconstruction of such interactions.\\
+
+            However, the veto applied on the pair of tracks belonging to secondary interactions is implemented differently.  In order to remove those tracks, we match the secondary interaction vertex position with the position of the layers of the tracker. These layers can be passive (Pixel Barrel inner and outer support, Pixel Barrel rails, beam pipe) or active (Tracker Layers and Rings). The position of the layers of the tracker is defined in the RECO data format where the first hit of the tracks is used to define each layer of the tracker by their position in the tracker, with the first hit of the tracks going up to the Tracker Outer Barrel Layer 1 (TOBL1), about 70 centimeters in the transverse plane from the center of CMS. The example for the Pixel Barrel is given in Fig.\ref{fig:trackermap}. Once the matching is done between the two positions, the tracks associated to the secondary interactions are removed from the workflow. The applied veto is shown in Fig.\ref{fig:longVeto} and Fig.\ref{fig:Veto}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 2cm,clip]{images/SecInt/TIBL1_RECO.png}
+\caption{\label{fig:trackermap} Example of the tracker TIBL1 geometry built using the RECO dataformat with the first hits of the tracks}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/SecInt/NI.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/SecInt/vetoNI.png}
+\caption{\label{fig:longVeto} Mass plots of the V0 candidates from a $t\Bar{t}$ sample}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/SecInt/BESTSecInt.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0.cm,clip]{images/SecInt/Veto_SecInt.png}
+\caption{\label{fig:Veto} Mass plots of the V0 candidates from a $t\Bar{t}$ sample}
+\end{figure}
+        \FloatBarrier
+    \subsection{Tracks from signal}
+        \label{SUB:BDTRK}
+        Since the analysis is performed in the MiniAOD data format, there are several flags that have to be taken care of. The first one is that in this analysis, both packedPFCandidate and lostTracks collections are considered, more details in \cite{MiniAOD}. The use of MiniAOD data-format also induces the use of High Purity tracks (to be described), however, it has been observed that all tracks are not High Purity tracks in the two collections. Therefore, several tests have been performed to look for the best combination of selections, see Table.\ref{tab:TRKSEL}. The final requirement of the tracks are that lostTracks collection is added without requiring the HighPurity flag on. As a note, most tracks that will be selected by the track selection BDT are highPurity tracks.
+
+                \begin{table}[h]
+        \centering
+        \begin{tabular}{|m{4cm}|m{3.cm}|m{3.5cm}|m{3cm}|}
+        \hline
+        \rowcolor{lightgray} 
+         \centering Selection & Signal Track selection efficiency & Bkg track selection efficiency (in Signal Events) & $t\Bar{t}$ track selection efficiency\\
+        \hline
+        \With LostTracks and without HighPurity flag on &  94.5 & 10 & 6.5 \\
+        \hline
+        With LostTracks and HighPurity flag on & 93.3 & 8.7 &  5.4 \\
+        \hline
+        Without LostTracks and without HighPurity flag on & 81.5 & 8 & 4.9\\
+        \hline
+        Without LostTracks and with HighPurity flag on & 81.4 & 8 & 4.9\\
+        \hline
+        \end{tabular}
+        \caption{Track selection BDT input variables}
+        \label{tab:TRKSEL}
+        \end{table}
+        
+        Tracks from the neutralino have a displacement that depends on the decay length of the latter and it can be possibly hard to distinguish background tracks from signal tracks depending on the phase space. A first selection is optimised to reduce the amount of background tracks by requiring a $p_T > 1$  GeV, $\frac{\chi^2}{dof} < 5$ and a transverse impact parameter significance $|\frac{d_{xy}}{\sigma_{xy}}| > 5$ where  $\sigma_{xy}$ is the error on $d_{xy}$. This pre-selection allows to reduce a significant amount of background (about 90\% for $t\Bar{t}$) while keeping 95\% of the signal displaced tracks. \\
+
+                [add generator level  tracks plot]\\
+        
+        However, these first cuts do not allow to reduce the background at a high enough amount to observe the signal, therefore a multivariate analysis based on a BDT is again performed to discriminate between signal tracks and background tracks. All the details related to this BDT are shown in the Appendix\ref{APP: TRKBDT}.\\ The input variables are given in Table.\ref{tab:TRKBDTVAR}
+
+        \begin{table}[h]
+        \centering
+        \begin{tabular}{|m{6cm}||m{9cm}|}
+        \hline
+        \rowcolor{lightgray} 
+         \centering Variables & Definition\\
+        \hline
+        \centering $d_{z}$ & track impact parameter in the longitudinal axis  \\
+        \hline
+        \centering $d_{xy}$ & track impact parameter in the transverse plane\\
+        \hline
+        \centering $Sig_{z}$ & track longitudinal impact parameter significance defined as $\frac{d_{z}}{\sigma_{z}}$  where $\sigma_{z}$ is the error on $d_{z}$ \\
+        \hline
+        \centering$Sig_{xy}$ & track longitudinal impact parameter significance defined as $\frac{d_{xy}}{\sigma_{xy}}$  where $\sigma_{xy}$ is the error on $d_{xy}$ \\
+        \hline
+        \centering $p_{T}$  &   $p_{T}$ of the tracks \\
+        \hline
+        \centering $\eta$ & $\eta$ of the tracks  \\
+        \hline
+        \centering $\frac{\chi^2}{dof}$  &   $\frac{\chi^2}{dof}$ of the tracks\\     
+        \hline
+        \centering $n_{hits}$  &   $n_{hits}$ of the tracks\\
+        \hline
+        \centering ntrk10-20-30-40 & Number of tracks having their first hit within 10-20-30-40 centimeters from the first hit of the track considered\\
+        \hline
+        \centering IsInJet & If the belong to a jet or not\\
+        \hline
+        \centering isLost & If the track belongs to the lost track collection\\
+        \hline
+        \centering $\Delta R_{min}$ & $\Delta R$ between the track considered and the axis of the closest hemisphere\\
+        \hline
+        \centering $\Delta R_{max}$ & $\Delta R$ between the track considered and the axis of the most distant hemisphere\\
+        \hline
+        \end{tabular}
+        \caption{Track selection BDT input variables}
+        \label{tab:TRKBDTVAR}
+        \end{table}
+        
+        Out of this BDT, one working point (WP) is defined for the rest of the workflow : Tight. The corresponding signal and background efficiencies associated to this WP are given in the Table.\ref{tab:TRKBDTWP}. The tight WP is defined to reduced the background tracks by a factor $10^3$. 
+
+        \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  \rowcolor{lightgray} 
+  WP & BDT value & Signal Efficiency (\%) & Background Rejection  (\%)\\
+  \hline
+    Tight & 0.85 & 73 & 99.5 \\
+  \hline
+\end{tabular}
+    \caption{Working Point for the track selection BDT}
+    \label{tab:TRKBDTWP}
+\end{table}
+
+    \subsubsection{Dependence of the track selection BDT with respect to the phase space}
+    [tracks assignment ot hemisphere]
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Displaced Vertices Reconstruction}
+\label{SEC: DISVTX}
+    The main goal of this analysis is the reconstruction of displaced vertices coming from the decay of a long-lived neutralino decaying in the tracker volume. For the vertexing, only one vertex per hemisphere is reconstructed using the Adaptive Vertex Fitter (AVF) \cite{AVF}. The AVF is a more robust iteration of the Kalman Fitter, more efficient with high-track multiplicity vertices allowing to reach good reconstruction efficiencies for our signal. A comparison between the two algorithms is shown in Fig.[add figure]\\
+
+    The parameters given as an input of the AVF are given in the Table.\ref{tab:AVFPARAMETERS}. After testing different values for the input parameters, no major changes in the final efficiencies were observed therefore the default values given in the Table.\ref{tab:AVFPARAMETERS} are kept.\\
+
+            \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|m{10 cm}|}
+  \hline
+  \rowcolor{lightgray} 
+  Parameter & Value & Definition\\
+  \hline
+        maxshift & 0.0001 & Convergence criterion (maximum transverse distance between vertex computed in the previous and the current iterations)\\
+        \hline
+        maxstep & 30 & Maximum number of iterations to perform\\
+        \hline
+        maxlpshift & 0.1 & Criterion for the relinearization of the tracks \\
+        \hline
+        weightthreshold & 0.001 & Minimum track weight for a track to be considered "significant". If fewer than two tracks are significant, an invalid vertex is returned.\\
+        \hline
+        sigmacut & 5. & Tracks this number of sigma from the vertex are given a weight of 0.5\\
+        \hline
+        Tini & 256. & Parameter used to compute the weight of a given track associated to a vertex\\
+        \hline
+        ratio & 0.25 &  Parameter used to compute the weight of a given track associated to a vertex\\
+  \hline
+\end{tabular}
+    \caption{Input parameters for the Adaptive Vertex Fitter}
+    \label{tab:AVFPARAMETERS}
+\end{table}
+
+     A first collection of tracks is built for each hemisphere out of the tight WP. The vertexing will then be performed in 2 steps for each hemisphere in order to reconstruct one vertex per hemisphere. A detail of the vertexing workflow is given below.
+    
+    \subsection{Multi-step vertexing}
+        In this analysis, one vertex is reconstructed per hemisphere knowing the complexity of the sub-structure of the displaced jets. Further improvement could be potentially obtained by looking for tertiary vertices coming from the b-jets but these jets can be hard to identify since b-tagging does not apply to largely displaced jets (dozens of centimeters) and also due to the decrease in resolution of the vertices.\\
+
+        For each hemisphere, we first use the collection of the tight WP tracks to build the vertices where we expect to have a collection enriched in signal displaced tracks. Then, we apply two different steps to try to build a vertex in a hemisphere. The criteria for the reconstruction of a vertex are :
+        \begin{itemize}
+            \item a normalized $\frac{\chi^2}{dof}$ between 0 and 10
+            \item for signal samples, the relative distance between the reconstructed and generated vertices must be lower than 10\% of the generated decay length.
+        \end{itemize}
+        \begin{enumerate}
+            \item The first iteration is the direct production of a vertex out of the tracks from the tight WP
+            \item if no vertex is produced in the previous step, an iterative implementation of the AVF (IAVF, see details in Appendix.\ref{APP: IAVF}) is applied by requesting a $\frac{\chi^2}{dof}$ while building the vertex
+        \end{enumerate}
+
+        In this multi-step vertexing, some tracks are removed if they do not respect the criteria that the first hit of any track must come after the position of the vertex that is built. Then, the step 2 corresponds to the IAVF, each iteration corresponding to adding a new track in the procedure, if the next iteration provides a vertex with a $\frac{\chi^2}{dof}$ below 0 or above 10, the track is removed. Out of these removed tracks, there is a possibility that these tracks belong to tertiary displaced vertices coming from b-jets. However, applying the AVF on the removed tracks has not shown any improvement in the vertex reconstruction efficiency.
+
+        
+    \subsection{Vertex Selection}
+
+        
+        The two steps mentioned above allow to maximise the reconstruction of signal vertices and minimising the reconstruction of background vertices, see Fig.XX [add figure of efficiency vs step]. However, the amount of backgrounds events at this stage is still orders of magnitude above the number of signal events, so a new BDT-based multivariate analysis is performed to discriminate signal vertices from background vertices. This can be done thanks to the high-track multiplicity of the final state and the choice of the multi-step vertexing. All the details about the BDT are described in the Appendix.\ref{APP: VTXBDT}
+
+        The input variables are listed in Table \ref{tab:VTXBDTVAR}.
+        \begin{table}[h]
+        \centering
+        \begin{tabular}{|m{6cm}||m{9cm}|}
+        \hline
+        \rowcolor{lightgray} 
+         \centering Variables & Definition\\
+        \hline
+        \centering Mass of the Hemispere at construction level & Invariant mass of all the jets and letpons (except the prompt ones) contained in the hemisphere  \\
+        \hline
+        \centering Mass of the Hemisphere at the vertex level & Invariant mass of all the tracks associated with the vertex\\
+        \hline
+        \centering ntrk10 & Number of tracks having their first hit closer than 10 cm from the vertex   \\
+        \hline
+        \centering ntrk20 & Number of tracks having their first hit closer than 20 cm from the vertex   \\
+        \hline
+        \centering Mean of Distance of Closest Approach & Computation of the mean of the distance of closest approach of the tracks associated to the vertex and the vertex\\     
+        \hline
+        \centering N. of  tracks & Number of tracks associated with the vertex\\
+        \hline
+        \centering $\frac{\chi^2}{dof}$ & $\chi^2$ per degree of freedom of the vertex\\
+        \hline
+        \centering Step & The step of reconstruction of the vertex (1 or 2)\\
+        \hline
+        \centering Mean Weight of the tracks & Each track is associated a weight corresponding to the probability that this track belongs to the vertex. The mean value of the weights of all the tracks associated to the vertex is computed. A discussion about this variable is given in Appendix.\ref{APP: MWT}.\\
+        \hline
+        \end{tabular}
+        \caption{ Vertex selection BDT input variables}
+        \label{tab:VTXBDTVAR}
+        \end{table}
+        \FloatBarrier
+
+        \subsubsection{Dependence of the Vertex selection BDT with respect to the phase space}
+        
+        \indent Since this BDT is based on track-multiplicity quantities, for decay length reaching the outer part of the tracker where the tracking efficiency is at its lowest, the track-multiplicity of the signal vertex can decrease and reach the track-multiplicity of a SM background vertex.
+        Therefore, a drop of efficiency can be expected for high decay length of the neutralino for this BDT. A comparison between two BDTs  is shown in Fig.[Add fig].
+        
+        \subsubsection{Vertex reconstruction efficiency}
+
+                The reconstruction of the signal is expressed as the vertex reconstruction efficiency as a function of the decay length of the neutralino. This efficiency can also be expressed as a function of the transverse distance  or $|\eta|$.
+                In this analysis, a vertex is considered reconstructed when the $\frac{\chi^2}{dof}$ is between 0 and 10.  For signal MC samples, a criteria is added on the matching between the reconstructed vertex and the generated one: the relative distance between the two vertices must be lower than 10\% of the generated decay length (called matched vertices). 
+                \begin{itemize}
+                    \item The efficiency is computed as the ratio between the number of matched vertices by the number of vertices that should be reconstructed in theory, i.e twice the amount of events passing the Online+Offline selection.
+                    \item The second quantity that can be defined in signal MC samples is the purity, that is the ratio between the number of matched vertices and the number of vertices having a $\frac{\chi^2}{dof}$ between 0 and 10.
+                \end{itemize}
+            Both quantities are shown in Fig.\ref{fig:VTXEff}     
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXEff/NewEff.png}
+\caption{\label{fig:VTXEff} Vertex reconstruction efficiency and purity as a function of the decay length of the neutralino.}
+\end{figure}     
+The vertex reconstruction efficiency is highly dependant on the tracking efficiency causing the negative slopes after a decay length of 10 cm. The purity is also dependant on the resolution on the vertices for high decay length.\\
+
+Finally, the vertex reconstruction efficiency is shown as a function of the smuon and neutralino masses in Fig.\ref{fig:VTXEffmass} for a given $c\tau$.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=8cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXEff/eff_vertex_trueaxis3.png}
+\caption{\label{fig:VTXEffmass} Vertex reconstruction efficiency as a function of the mass of the neutralino and the smuon for a $c\tau$ of 20 cm. The comparison is made between the reconstructed hemisphere and the true neutralinos axis used as the reconstructed axis. No major deviation is observed showing the good behavior of the multi-step vertexing with respect to the workflow.}
+\end{figure}   
+\FloatBarrier
+        \subsubsection{Resolution on the reconstructed vertices}
+        The resolution on the position of the vertices is an indicator of the quality of the reconstructed vertices. Since the reconstructed vertices are displaced, the resolution is shown as a function of the decay length in the transverse plane in the barrel region and on the longitudinal axis in the endcaps. The resolution is computed as the distance between a vertex of signal and a vertex of secondary interaction  
+        and shown in Fig.\ref{fig:VTXRes}   
+        \begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXRes/NEWTransverseRes.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXRes/NEWLongitudinalRes.png}
+\caption{\label{fig:VTXRes} Transverse (longitudinal) resolution  in the transverse plane (longitudinal axis) as a function of the decay length }
+\end{figure}   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Background Estimation}
+\label{SEC: BKGEST}
+    \subsection{Validations using MC samples }
+    \pagebreak
+    \subsection{Validations using Data samples }
+    \subsection{ABCD Method}
+
+        The background estimation is implemented using two discriminating variables to define background enriched regions (control regions) and signal-enriched regions (signal regions). The current implementation of the analysis uses the event selection and vertex selection BDTs in order to define these regions. The final categorisation is shown for exactly one vertex and two-vertices reconstructed in Fig.\ref{fig:EVTYIELDS}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=8cm, width=12cm, trim= 0cm 0cm 0cm 0cm,clip]{images/ABCD/EVTYieldsRun2.png}
+\caption{\label{fig:EVTYIELDS} Event yields for Run 2 for the one vertex and two vertices categories. The two categories are defined as : "Exactly one vertex reconstructed" and "Exactly two vertices reconstructed" where a vertex is considered reconstructed when its follows $0<\frac{\chi^2}{DoF}<10$. For signal samples, the reconstructed vertex is required to be within 10\% matching with the generated vertex such that : the difference in position between the reconstructed and generated vertices is below 10\% of the generated vertices decay length. The signal region is defined by a BDT value above 0 for the event selection BDT and above 0.5 for the vertex selection BDT. }
+\end{figure}     
+
+    \pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Systematic Uncertainties}
+\label{SEC: SYST}
+This analysis relies on the study of simulated Monte-Carlo samples. Given that all physic quantities are not perfectly modelled and simulated, systematic effects arise from the study of the Monte-Carlo samples. These effects can come from the trigger efficiencies, pile-up, detector effects, particle identification and potentially changing the shape of the different distributions of this analysis.
+
+The systematic parameters mentioned in the following sections are varied both positively and negatively of one sigma from the nominal value. These variations will be referenced as up and down, respectively. The final analysis of these systematic effect is shown in Table.[add table from combine].
+
+    \subsection{PDF uncertainties}
+    \pagebreak
+    \subsection{Luminosity Measurement}
+    \pagebreak
+    \subsection{Trigger systematics}
+    \pagebreak
+    \subsection{Pileup uncertainties}
+    \pagebreak
+    \subsection{Jet energy scale}
+    \pagebreak
+    \subsection{Track parameters : $p_T$, $\chi^2$, $IP_{xy}$}
+    \pagebreak
+    \subsection{Event selection BDT mis-identification}
+    \pagebreak
+    \subsection{Track selection BDT mis-identification}
+    \pagebreak
+    \subsection{Vertex selection BDT mis-identification}
+    \pagebreak
+    \subsection{Monte-Carlo statistics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Results}
+\label{SEC: RESULTS}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |c|c|c|p{0.1\textwidth}| } 
+    \hline
+    \rowcolor{lightgray} 
+    col1 & col2 & col3 & col4\\
+    \hline
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ 
+    \cline{3-4}
+    & cell5 & \multicolumn{2}{c|}{cell6 and cell7} \\
+    \cline{3-4}
+    & cell8 & cell9 & cell10 \\ 
+    \hline
+    cell11 & cell12 & cell13 & cell14 \\ 
+    \hline
+    \multicolumn{4}{|c|}{ Multicolumn} \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{A table is as happy about a caption as a fiugre.}
+\label{tab:exampletable}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Summary}
+
+In this paper, a search for displaced top quark through the decay of a massive long-lived particle in the tracker of CMS for the Run 2 of the LHC is introduced. This search is mainly based on machine learning to select displaced tracks in order to reconstruct signal displaced vertices reaching a signal vertex reconstruction efficiency of about 50\% at a decay length of 50 cm for the neutralino.
+
+\label{SEC: SUM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Appendix}
+\label{SEC: APP}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Monte-Carlo generation of signal samples}
+\label{APP: GEN}
+The generation of the RPV-Process is made using the MADGRAPH5\_aMC@NLO (MG5) generator. Since there is no explicit Universal FeynRules Output (UFO, see \cite{UFO}) model dedicated to the RPV-process studied, a private model has been developed taking into account the constraints from MG5 such as the non-possibility of the lightest neutralino (LSP) to decay. In the following, the lightest neutralino at the MG5 level will be $\chi^2_{0}$ since MG5 allows for its decay. To proceed to the generation, two steps are required. First, the merging between Pythia8 [add ref to pythia 8] and MG5 for the hadronisation part then the generation of events with the needed input parameters.
+For the first part, the value of merging is given the MC\& I contact. The generation is detailed below.
+\subsubsection{Generation}
+
+The event generation of the pair-production of neutralino is done at LO+1 jet as an initial state radiation (ISR).
+The commands given are used to generate the signal :
+ import model DisplacedTopUDD --modelname \\
+ generate p p  $>$ sl2+ sl2- / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+, n2\
+ $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl\
+2- $>$ n2 mu-, n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~\
+ sd6 sd6~) @1 \\
+ add process p p  $>$ sl2+ sl2- / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), \
+(sl2- $>$ n2 mu-, n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd\
+5 sd5~ sd6 sd6~) @2\\
+add process p p  $>$ sl2+ sl2- / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~\
+), (sl2- $>$ n2 mu-, n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd\
+5 sd5~ sd6 sd6~) @3\\
+add process p p  $>$ sl2+ sl2- / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~\
+), (sl2- $>$ n2 mu-, n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~\ sd5 sd5~ sd6 sd6~) @4\\
+add process p p  $>$ sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+, n2\
+ $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), (sl\
+2- $>$ n2 mu-, n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~\
+ sd6 sd6~) @1\\
+ add process p p  $>$ sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~), \
+(sl2- $>$ n2 mu-, n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd\
+5 sd5~ sd6 sd6~) @2\\
+add process p p  $>$ sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~\
+), (sl2- $>$ n2 mu-, n2 $>$ t d s / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd\
+5 sd5~ sd6 sd6~) @3\\
+add process p p  $>$ sl2+ sl2- j / h01 h02 a0 n1 n2 n3 n4, (sl2+ $>$ n2 mu+,\
+ n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~ sd5 sd5~ sd6 sd6~\
+), (sl2- $>$ n2 mu-, n2 $>$ t~ d~ s~ / sd1 sd1~ sd2 sd2~ sd3 sd3~ sd4 sd4~\ sd5 sd5~ sd6 sd6~) @4\\
+
+Then, the parameters used for generating the LHE file are the following:
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |c|c|m{8cm}| } 
+    \hline
+    \rowcolor{lightgray} 
+    Parameter & Value & Definition\\
+    \hline 
+    shower program & Pythia8 & Hadronisation \\
+    \hline
+    pdflabel & lhapdf & PDF set  \\ 
+    \hline
+    lhaid & 306000 & lhapdf number (NNPDF3.1) \\
+    \hline
+    ickkw & 1 & MLM \\
+    \hline
+    asrwgtflavor & 5 & highest quark flavor for $\alpha_{S}$ reweight \\
+    \hline
+    xqcut & 20 & minimum kt jet measure between partons \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{List of tuning parameters for Pythia8.}
+\label{TAB : GENPARA}
+\end{table}
+\FloatBarrier 
+The merging value (xqcut) between MG5 and Pythia8 (better xplain this) is the one provided by the Monte-Carlo contact : between 20 and 30. This value was also retrieved by generating signal samples for different values of xqcut, from 1 to 100.
+The systematic uncertainties at the generator level are extracted from the \textbf{NNPDF3.1} pdf ... . 
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Covariance Matrix}
+\label{APP: COVMAT}
+This analysis used to be performed on the RECO data-format but it was moved the MiniAOD data-format following the request of the CMS group and to reduce computing time/file size. However, this change induces several changes such as the approximation of the covariance matrix of the tracks. This approximation may not have direct consequences for the track selection but a drop of 10\% of the total vertex reconstruction efficiency was observed due to the MiniAOD data-format. 
+The covariance matrix of the track is gathering :
+\begin{enumerate}
+    \item  $\frac{q}{abs(p)}$ :  signed inverse of momentum [1/GeV] 
+    \item  $\lambda$ = $\frac{\pi}{2}$ : polar angle at the given point 
+    \item  $\phi$ : azimuth angle at the given point 
+    \item  $d_{xy}$ : -$v_x$*sin($\phi$) + $v_y$*cos($\phi$) [cm] 
+    \item  $d_{sz}$ : $v_z$*cos($\lambda$) - ($v_x$*cos($\phi$)+$v_y$*sin($\phi$))*sin($\lambda$) [cm] 
+\end{enumerate}
+In the MiniAOD format, due to the approximation of this matrix, the matrix is not positive-definite with matrix element being equal to 0 or infinite. A simple correction is applied to correct for these non-defined values and make the matrix positive-definite. The correction was developed by the B Physics group \cite{COVMAT} in the release CMSSW\_13\_0\_0, but it can also be added by hand in the analysis framework. The correction allows to recover for the 10\% vertex reconstruction efficiency drop observed.
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{First hit retrieval}
+\label{APP: FIRSTHIT}
+This analysis used to be performed on the  MiniAOD data-format following the request of the CMS group to reduce computing time/ file size. However, this change induces several changes such as the loss of the position of the first-hit of the tracks. This loss can be characterized in two ways : one for the packedPFCandidate and one for the lostTracks collection. In MiniAOD data-format, the only information about the position of the first-hit of the tracks is the layer of the first-hit that is registered as an 11-bit number and that can be interpreted as a 4-digits number also called hitpattern (see [add hitpattern ref] or table). Concerning the lostTracks collection, the 4-digits number is not registered correctly leading to no first-hit information at all. A correction is applied on Run 3 for 2023 and beyond. Concerning the packedPFCandidate collection, this 4-digit number is stored correctly and can be used to retrieve the first-hit position of the tracks using track parameters and propagators.
+[add plots for layers and resolution plots]. The needed track parameters are the following : momentum , $\eta$, $\phi$, the distance of closest approach of the center of CMS (reference point) along the longitudinal axis, the state of the track at the reference point defined as a 6-dimensional state matrix with the associated error matrix, and the hitpattern mentioned above. The 6-dimensional state matrix parameters are the position (defined in the global frame), the momentum, the charge, the signed inverse momentum (charge divided by the magnitude of the momentum) and the transverse curvature ( Transverse curvature kappa (which is the inverse radius of curvature in the transverse plane) in $cm^{-1}$. Sign convention is such that positive kappa means counterclockwise rotation of the track with respect to the global z-axis.). \\
+
+With this set of parameters with their associated errors, propagators are then used to retrieve the position of the first-hit. There are two different propagators used for this procedure, depending on the region of propagation : barrel or endcap. For the endcap region, the StraightLinePlaneCrossing propagator is used and the analytical propagator is used for the barrel region. If the propagators fail, a geometric estimation of the position of the first-hit of the track is done using $\eta$, $\phi$ and the distance of closest approach of the center of CMS (reference point) along the longitudinal axis. The output of the propagators is shown in Fig. for TIB L1. The resolution on the first-hit of the tracks is given in Table.[add table]
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Event Selection BDT}
+\label{APP: EVTBDT}
+
+After the selection on the events using the triggers and the invariant mass of the two prompt muons in Section.\ref{SEC: EVTSEL}, there are still many variables (Table.\ref{tab:EVTBDTVAR}) that display discriminating power between signal and background at event level. These variables are mainly based on the kinematics of the objects of the events, hence their distributions vary with respect to the phase space [add plots]. Therefore, a simple cut-based selection based on these variables would not allow for a global selection of the signal but it would select a certain part of the signal phase space. In order to select the maximum of signal events in the whole phase space allowed, a BDT is implemented thanks to the Toolkit For Multivariate Data Analysis (TMVA) available in ROOT.\\
+
+For the selection of events, the training has been performed using all signal samples (re-weighted by their cross-section) as a single signal input to the BDT. A total of 635 000 signal events (-6000 for each sample of signal, the same for the test) are used for the training part. Concerning the backgrounds, about 400 000 background events are used for the training (same amount for the test) with the background being listed in Table.\ref{tab:MC2018}.
+
+The distributions for these variables are given in Fig.[XX] and [XY] with the associated correlations matrices in Fig.[YY]. [don't forget to talk about the dxyerror data/mc disagreement that is expected and could modify the output of this BDT]. Since no difference of efficiency is observed between training and test, no over-training is obtained but it is expected that this BDT is trained for specific regions of the phase space and therefore ”over-trained” for these regions. The plot on the right of Fig.\ref{fig:TRKTraining} shows a good discrimination power that can be used to select signal events with one working point.
+
+[I, Paul, son of Brittany, will update the plots when the BDT's will be more "finalized", thank you!] 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=8cm, width=16cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/CORTRK.png}
+\caption{\label{fig:TRKCOR} Correlation matrices between input variables for the track selection BDT for signal on the left and background on the right}.
+\end{figure} 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/ROCTRK.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/TrainingTRK.png}
+\caption{\label{fig:TRKTraining} On the left, ROC Curve showing the background rejection with respect to signal efficiency. On the right, the test (histograms) and training (dots) output distributions for signal and background}.
+\end{figure} 
+
+\FloatBarrier
+
+ \pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Track Selection BDT}
+\label{APP: TRKBDT}
+ The final selection of displaced tracks for the reconstruction of vertices is performed using the Toolkit For Multivariate Data Analysis (TMVA) available in ROOT. This toolkit allows for many implementations of multivariate data analysis techniques, from the BDT to Convolution Neural Networks. In this analysis, we make use of the BDT to distinguish signal displaced tracks with respect to prompt tracks from SM backgrounds.  The BDT implementation needs three steps : training, testing and "verification". The first two are performed by root while the third one has to be performed by the analyzers to monitor the theoretical and observed outputs.\\
+ For the selection of tracks, the training has been performed using one signal sample (to be extended to more signal samples in the future) of parameters $M_{\Tilde{\mu}}$ = 275 GeV,  $M_{\Tilde{\chi}^{1}_{0}}$ = 225 GeV and $\Tilde{\beta  \gamma c\tau}$ = 50 cm for the neutralino using 40 000 tracks for the training (40 000 for testing). For the backgrounds, the training has been performed with the samples mentioned in Table.\ref{tab:MC2018}. A total of 200 000 tracks have been used for the background samples for the training (200 000 for testing). For the training, each sample has been re-weighted by their cross-section using the XSDB "database" \cite{XSDB} for the backgrounds and the Fig.\ref{fig:CrossX} for the signal sample.\\ 
+ The input variables for this BDT are the one given in Table.\ref{tab:TRKBDTVAR} with the distribution for the signal and background given in Fig. XX [Add figure input variables for TRKBDT]. The correlations between these variables are given in Fig.\ref{fig:TRKCOR}. The results of the training are provided in Fig.\ref{fig:TRKTraining}. Since no difference of efficiency is observed between training and testing, no over-training is obtained but it is expected that this BDT is trained for specific regions of the phase space and therefore "over-trained" for these regions. \\
+ The plot on the right of Fig.\ref{fig:TRKTraining} shows a good discrimination power that can be used to select displaced tracks. Therefore, one working point is defined for this BDT, a tight one (TWP). The TWP is defined such that the rejection power for the background is about $10^3$ (this factor depends on the background sample). This factor is obtained for a value of 0.85 for the BDT value giving a signal efficiency of 73\% and background rejection of 99.5\%. This working point will be used to build one collection of tight tracks (TT) that will be then given as an input for the vertexing workflow.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=8cm, width=16cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/CORTRK.png}
+\caption{\label{fig:TRKCOR} Correlation matrices between input variables for the track selection BDT for signal on the left and background on the right}.
+\end{figure} 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/ROCTRK.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/TRKBDT/TrainingTRK.png}
+\caption{\label{fig:TRKTraining} On the left, ROC Curve showing the background rejection with respect to signal efficiency. On the right, the test (histograms) and training (dots) output distributions for signal and background}.
+\end{figure} 
+
+
+
+\FloatBarrier
+
+ \pagebreak
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ Adaptive Vertex Fitter}
+\label{APP: AVF}
+The goal of the analysis is to reconstruct displaced vertices coming from the decay of a long-lived neutralino in each of the two hemispheres. The AVF is used to reconstruct the vertices in order to increase the robustness with respect to track-multiplicity and displacement compared to the basic Kalman Fitter. The first step of the vertexing makes use of the AVF to reconstruct vertices out of the TT collection. \\
+The AVF uses all the tracks from the TT collection but each track is weighted according to their chi2 distance to the vertex. The weight is computed as followed :
+\begin{equation}
+        w_{i}(\chi^{2}_{i})= \frac{  \exp^{-\chi^{2}_{i}/2T_{ini}}  }{\exp^{-\chi^{2}_{i}/2T_{ini}} + \exp^{-\chi^{2}_{cut}/2T_{ini}}}
+\end{equation}
+
+where $\chi^{2}_{i}$ is a $\chi^{2}$-type criterion for statistical compatibility between the vertex position and track i. The temperature parameter $T_{ini}$ introduced before defines the shape of the function. Then, the AVF uses a deterministic annealing schema to avoid local minimum where $T_{ini}$ is decreased by a factor defined by the parameter $ratio$, so that the temperature converges to 1. The weight is therefore defined between 0 and 1 and can be interpreted as the probability for a track to belong to the associated vertex. \\
+
+A vertex is built if :
+    \begin{enumerate}
+        \item the AVF converges before the maximum of iteration is reached
+        \item the fitted position of the vertex is within the tracker bounds
+        \item there are at-least two tracks with a "high-enough" weight (above 0.8). 
+    \end{enumerate}
+
+Therefore, one has to check the weight of the tracks when looking at the number of tracks associated  to a vertex. A deeper analysis of the weight of the tracks is provided in Appendix.\ref{APP: MWT}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Iterative Adaptive Vertex Fitter}
+\label{APP: IAVF}
+The goal of the analysis is to reconstruct displaced vertices coming from the decay of a long-lived neutralino in each of the two hemispheres. The AVF is used to reconstruct the vertices in order to increase the robustness with respect to track-multiplicity and displacement compared to the basic Kalman Fitter. The first step of the vertexing makes use of the AVF to reconstruct vertices out of the TT collection. However, when comparing the number of vertices reconstructed in this first step with the number of vertices that can be reconstructed, the first step reaches about 80\% of the total vertices to be reconstructed. In the 20\% of the vertices remaining,\begin{enumerate}
+    \item either there are some missing tracks as those tracks may not be part of the TT
+    \item or the first step of the vertexing procedure failed with the TT collection.
+\end{enumerate} 
+The first issue is not addressedsince it would require to lower the working point of the BDT of selections of tracks and largely increase the amount of background tracks. The second issue is addressed by implementing an Iterative Adaptive Vertex Fitter (IAVF). The Adaptive Vertex Fitter is already an iterative procedure by itself but it can be changed in order to facilitate  the building procedure of a vertex. In the first step of the vertexing, the AVF is simply used by giving the TT collection as an input and the output is either a vertex with a good $\frac{\chi^2}{dof}$, a vertex with a bad $\frac{\chi^2}{dof}$ or no vertex at all. A vertex is considered good when the 
+$\frac{\chi^2}{dof}$ is between 0 and 10, see Fig.[chi2 distribution of vertices], where the $dof$ is defined as the sum of the sum of the tracks weights minus 3. For the step 2 using the IAVF, the TT are ordered by decreasing value of BDT score of the track selection BDT, making the most signal-like tracks to be selected first. The IAVF can be defined as follow :
+\begin{enumerate}
+    \item a first good  vertex (0 $<\frac{\chi^2}{dof}<$ 10) is built out of any pair of tracks from the TT collection. This vertex is called the seed. This step makes use of the ordering of the tracks by decreasing value of BDT score. If the first two tracks are not used to build the seed, it iterates over all the remaining tracks but no track is discarded from the vertexing during this procedure. If no seed is found, no vertex is built.
+    \item When the seed is built, we add one track after the other to the seed by making sure that after each new track, the newly fitted vertex has a good $\frac{\chi^2}{dof}$. If this criteria is satisfied, it iterates over the remaining tracks. Else, the track that makes the vertex not satisfying the $\frac{\chi^2}{dof}$ criteria is removed from the vertexing.
+    \item The final possible outputs are the same as step 1, where a good vertex can be obtained, a bad vertex or no vertex at all if no seed is built
+    \item Note : if a track has a  before the vertex position, the track is discarded. There is an exception for tracks from the lostTracks collection where the information of the first-hit is not stored correctly for Run 2 Monte-Carlo, see Appendix.\ref{APP: FIRSTHIT} 
+\end{enumerate}
+The step 2 is adding between 5 and 10\% to the total efficiency depending on the decay length of the neutralino, see Table [add table total efficiency per step]
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Vertex Selection BDT}
+\label{APP: VTXBDT}
+The goal of the analysis is the reconstruction of displaced vertices. The use of the multi-step workflow detailed in Appendix.\ref{APP: AVF} and \ref{APP: IAVF} aims at reconstructing the majority of the vertices. However, even after the reconstruction of vertices using the TT collection of tracks, the level of rejection of background is still not high enough to consider observing the signal, further selections need to be applied. To do so, a BDT is implemented to select signal vertices from background vertices. There are three main aspects that discriminates signal from background vertices : the track-multiplicity associated to the vertex, the invariant mass of the vertex and the step of reconstruction of the vertex.
+\begin{enumerate}
+    \item Signal vertices have more tracks associated to them compared to background vertices thanks to the coupling of the virtual $\Tilde{t}$ to a down and a strange quark.
+    \item One can reconstruct the mass of the displaced vertex using the jets used to build the hemisphere to have the neutral component or use only the charged components using the tracks used to build the vertex
+\end{enumerate}
+From these observations, several variables are built to discriminate signal from background vertices as shown in Table.\ref{tab:VTXBDTVAR}. The input variables distributions are given in Fig. [add fig input variables distribution]. The correlations between these variables are given in Fig.\ref{fig:VTXCOR}. The training has been performed using all the signal samples generated (used as a single signal sample) as an input to the BDT signal sample using  $\sim$6 000 signal vertices per sample for the training (and 6000 for testing). For the backgrounds, the training has been performed with the samples mentioned in Table.\ref{tab:MC2018}. For the training, each sample has been re-weighted by their cross-section using the XSDB "database" \cite{XSDB} for the backgrounds and using the Fig.\ref{fig:CrossX} for the signal sample. \\
+The results for the training are shown in Fig.\ref{fig:VTXTraining}. The plot on the right of Fig.\ref{fig:VTXTraining} shows a good discrimination power that can be used to select displaced vertices. Since no difference of efficiency is observed between training and testing, no over-training is obtained but it is expected that this BDT is trained for a specific region of the phase space and therefore ”over-trained” for this region of the phase space. By looking at the efficiency of this BDT with respect to the phase space, ... add [plot BDT output vs phase space]... \\
+There is one working point that is defined such that [to be defined after all the tests] in Fig. \ref{fig:VTXTraining} (left plot). This working point is used to define the final category of the event selection.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=8cm, width=16cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXBDT/CORVTX.png}
+\caption{\label{fig:VTXCOR} Correlation matrices between input variables for the track selection BDT for signal on the left and background on the right}. 
+\end{figure} 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXBDT/ROCVtx.png}\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXBDT/TrainingVTX.png}
+\caption{\label{fig:VTXTraining} On the left, ROC Curve showing the background rejection with respect to signal efficiency. On the right, the test (histograms) and training (dots) output distributions for signal and background}.
+\end{figure} 
+
+\FloatBarrier
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Mean Weight of the Tracks associated to a vertex}
+\label{APP: MWT}
+During the multi-step vertexing procedure, tracks are re-fitted in order to build a vertex. If a vertex is effectively built, the associated tracks are assigned a weight representing the probability of the track to effectively belong to the vertex, details in \cite{AVF}. Therefore, the weight is defined between 0 and 1 for each track where the weights are mostly close to 0 or 1. \\
+A this state of the analysis, the level of rejection of background is not high enough to observe the signal [see Table or plot, selection efficiency vs step]. A vertex selection step is then needed to reach higher level of rejection of background. \\
+Vertex level variables are then needed to select signal displaced vertices from SM background vertices. One vertex level variable can be built using the mean value of the weight of the tracks associated to a vertex. This variable can be interpreted as the effective number of tracks that belong to a vertex since the weight of a track is either close to 0 or to 1.
+Hence, for a vertex with N tracks associated, there are $N * \sum w$ effective tracks with w being the weight of a track. The difference between the two quantities is important : the first is a integer that only depicts the track used to build a vertex (directly linked to the track-multiplicity of the final-state), the second is a float that as mentioned above, is the effective number of tracks  that is also linked to the track-multiplicity of the final-state but also describes the quality of the association of the tracks. To illustrate the last point, see Fig. \ref{fig:MTW}. The best case scenario is obtained when $ N = \lceil N *\sum w \rceil$ meaning all the BDT selected tracks are well associated to a vertex, plus the higher the value of N, the better since the track-multiplicity is expected to be higher in the signal process.\\
+This newly-formed vertex level variable that is the mean weight of the tracks associated to a vertex can then be used as a discriminating variable between signal and background vertices as it carries multiple information : track multiplicity and the quality of the reconstructed vertex.
+\pagebreak
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXBDT/nMTW.png}
+\caption{\label{fig:nMTW} Example of the distribution of MWT. The peaks are observed around integers where a large fraction of these peaks is due to $ N = \lceil N_{\sum w}\rceil$. But with N tracks, N-M tracks can have a high weight and M tracks have a low weight. Therefore,  for these N tracks, there will be a peak at N-M effective tracks }.
+\end{figure} 
+
+This contamination from N-M tracks can be seen when looking at the efficiency of a cut on MWT, see Fig.\ref{fig:MTW}.
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/VTXBDT/MTW.png}
+\caption{\label{fig:MTW} Efficiency of a cut applied on MWT for signal and background samples. The difference in shape between signal and background is due to the contamination of the vertices with N-M effective tracks. The difference in efficiency with respect to the MWT is due to the track-multiplicity of the background vertices being lower, mainly two to 3 tracks compared to signal vertices having 10+ tracks.}.
+\end{figure} 
+
+
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Parameters of the Boosted Decision Tree}
+\label{APP: BDTPARA}
+
+This analysis is performing a multivariate analysis base on the TMVA framework of Root. TMVA allows for the implementation of a Boosted Decision Tree. A Boosted decision tree is a binary classifier based on a set of nodes making Signal-like/Background-like decisions using one input variable as shown in Fig.. The depth of the tree is  given as a free parameter. The Root implementation of the BDT is a forest, the average of a set of trees to enhance the robustness with respect to the input sample. A boost is applied to also increase the stability of the response of the final classifier with respect to fluctuations in the input samples. The different parameters that are used to tune the BDT are given in Table\ref{TAB : BDTPARA}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=6cm, width=8cm, trim= 0cm 0cm 0cm 0cm,clip]{images/BDT/BDTRoot.png}
+\caption{\label{fig:BDTRoot} Example of a Boosted Decision Tree with the final leaves labelled as "S" for signal and "B" for background, extracted from \cite{TMVA}}. The $x_i$ and $x_j$ are variables used as an input to the BDT
+\end{figure} 
+
+\FloatBarrier
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |c|c|m{8cm}| } 
+    \hline
+    \rowcolor{lightgray} 
+    Parameter & Value & Definition\\
+    \hline
+    NTrees & 500 & Number of trees in the forest  \\ 
+    \hline
+    MinNodeSize & 2.5\% & Minimum percentage of training
+events required in a leaf node (default value is 5\% for classification) \\
+    \hline
+    MaxDepth & 4 & Max depth of the decision tree allowed \\ 
+    \hline
+    BoostType & Grad & Boosting type for the trees in the forest  \\ 
+    \hline
+    UseBaggedBoost & True & Use only a random subsample of all
+    events for growing the trees in each iteration \\
+    \hline
+    GradBaggingFraction & 0.6 & Defines the fraction of
+events to be used in each iteration \\
+    \hline
+    Shrinkage & 0.1 & Learning rate for GradBoost algorithm \\
+    \hline
+    SeparationType & GiniIndex & Separation criterion for node splitting \\
+    \hline
+    nCuts & 20 & Number of grid points in variable
+range used in finding optimal cut in
+node splitting (default value). Increasing this value can be time consuming\\
+    \hline
+    UseYesNoLeaf & False & Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the
+leaf node \\
+    \hline
+    UseRandomisedTrees & False & Determine at each node splitting the
+cut variable only as the best out of
+a random subset of variable \\
+    \hline
+    DoBoostMonitor & True & Create control plot with ROC integral
+vs tree number \\
+    \hline
+\end{tabular}
+\end{center}
+\caption{List of tuning parameters for the Boosted Decision Trees.}
+\label{TAB : BDTPARA}
+\end{table}
+The SeparationType GiniIndex is a cell splitting algorithm that maximises the gain of a node based on the following function :
+\begin{equation}
+    gain(node) = p*(1-p)
+\end{equation}
+ where $p = \frac{N_{S}}{N_{S}+N_{B}}$ with $N_{S}$ and $N_{B}$ being the number of signal and background events respectively.\\
+ The Gradient boosting (Grad) is a boosting procedure only available for decision trees that is defined as followed :\\
+ \begin{enumerate}
+     \item As mentioned above, the implementation of the BDT is a forest made of N trees called weak-learners.:
+     \item The function $F(x)= \sum^{M}_{m=0} = \beta * f(x)$ where $\beta$ is the weight given to a single tree. To adjust the weight such that the difference between the final response of the BDT F(x) and the true value obtained from the training sample y is minimised, a loss function is implemented.
+     \item The Gradient Boosting uses a loss function robust to noisy samples/ samples with outliers :  \\
+     \begin{equation}
+         L(F,y) = \ln{(1+\exp^{-2F(x)y})}
+     \end{equation}
+     \item The use of Gradient Boosting is efficient for small-depth trees, between 2 and 4, reducing the possibility of overtraining. 
+     \item The robustness can be increased by having a low learning rate (Shrinkage) between 0.1 and 0.3 but this requires a high number of trees.
+     \item The efficiency of the BDT can be increased by using the BaggingSampleFraction where the best values are between 0.5 and 0.8.
+ \end{enumerate}
+
+Finally, the Boost Monitor helps verifying that the BDT converges well and "quickly" to a final value as shown in the Fig.[add figure as an example]. More details about these parameters are given in \cite{TMVA}.
+\FloatBarrier
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Output}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------- SECTION ----------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{references}
+\bibliographystyle{plain}
+
+\end{document}
