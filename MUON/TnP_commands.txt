@@ -6,14 +6,14 @@
 
 Base on the tutorial provided here : https://indico.cern.ch/event/1247210/sessions/478562/attachments/2587866/4465075/MuonPOG_tutorial_part2.pdf
 
-./tnp_fitter.py flatten muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example
-./tnp_fitter.py fit muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example –j 16
-./tnp_fitter.py prepare muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example
+./tnp_fitter.py flatten muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./DisplacedTop2018
+./tnp_fitter.py fit muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./DisplacedTop2018 –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./DisplacedTop2018
 
-./tnp_fitter.py flatten muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example
-./tnp_fitter.py fit muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example –j 16
-./tnp_fitter.py prepare muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example
+./tnp_fitter.py flatten muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./DisplacedTop2017
+./tnp_fitter.py fit muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./DisplacedTop2017 –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./DisplacedTop2017
 
-./tnp_fitter.py flatten muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example
-./tnp_fitter.py fit muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example –j 16
-./tnp_fitter.py prepare muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example
+./tnp_fitter.py flatten muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./DisplacedTop2016
+./tnp_fitter.py fit muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./DisplacedTop2016 –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./DisplacedTop2016
