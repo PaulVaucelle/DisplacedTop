@@ -1,0 +1,18 @@
+//------------------------------------------------------------------//
+//------------------------------------------------------------------//
+//  Muon Scale Factors using the Spark TnP tool from the Muon POG   //
+//------------------------------------------------------------------//
+//------------------------------------------------------------------//
+
+
+./tnp_fitter.py flatten muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example
+./tnp_fitter.py fit muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example
+
+./tnp_fitter.py flatten muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example
+./tnp_fitter.py fit muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2017_UL configs/muon_DisplacedTop2017.json --baseDir ./example
+
+./tnp_fitter.py flatten muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example
+./tnp_fitter.py fit muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example –j 16
+./tnp_fitter.py prepare muon generalTracks Z Run2016_UL configs/muon_DisplacedTop2016.json --baseDir ./example
