@@ -4,6 +4,7 @@
 //------------------------------------------------------------------//
 //------------------------------------------------------------------//
 
+Base on the tutorial provided here : https://indico.cern.ch/event/1247210/sessions/478562/attachments/2587866/4465075/MuonPOG_tutorial_part2.pdf
 
 ./tnp_fitter.py flatten muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example
 ./tnp_fitter.py fit muon generalTracks Z Run2018_UL configs/muon_DisplacedTop2018.json --baseDir ./example –j 16
