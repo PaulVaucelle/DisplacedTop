@@ -21,12 +21,18 @@ To run the runscript.C :
 
   - root
   - .L TreeReader.C
+    
   - .L runscript.C
+    
 The output will of the following form : "output_"+BDT+"_"+Type+"_"+sample+".root"
 where:
+
   "BDT" is either EVT, TRK or VTX
+  
   "Type" is either SIG or BKG
+  
   "sample" is the sample on which you ran to generate the input
+  
 -------------------------------
 
   - The second file is TMVAPaul.C that is used for the training and testing (both are performed, no need to do anything)
