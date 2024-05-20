@@ -1,4 +1,4 @@
-MIXING RL+LR 90500 LO  13TeV
+MIXING RL+LR 90500 LO  13TeV (to be mulitplied by 2 to fully have RL+LR)
 0.004482 +- 7.86e-06 pb
 0.001888 +- 3.316e-06 pb
 0.0009079 +- 1.903e-06 pb
@@ -7,7 +7,7 @@ MIXING RL+LR 90500 LO  13TeV
 0.0001551 +- 3.697e-07 pb
 9.443e-05 +- 1.711e-07 pb
 
-MIXING RL+LR 90500 LO1J 13TeV
+MIXING RL+LR 90500 LO1J 13TeV (to be mulitplied by 2 to fully have RL+LR)
 0.007178 +- 1.535e-05 pb
 0.003125 +- 1.05e-05 pb
 0.001533 +- 3.632e-06 pb
@@ -17,7 +17,7 @@ MIXING RL+LR 90500 LO1J 13TeV
 0.0001709 +- 4.128e-07 pb
 
 
-MIXING RL+LR 90500 LO  14TeV
+MIXING RL+LR 90500 LO  14TeV (to be mulitplied by 2 to fully have RL+LR)
 0.005086 +- 9.788e-06 pb
 0.002167 +- 3.495e-06 pb
 0.001053 +- 2.144e-06 pb
@@ -26,7 +26,7 @@ MIXING RL+LR 90500 LO  14TeV
 0.0001865 +- 4.463e-07 pb
 0.0001149 +- 2.162e-07 pb
 
-MIXING RL+LR 90500 LO1J 14TeV
+MIXING RL+LR 90500 LO1J 14TeV (to be mulitplied by 2 to fully have RL+LR)
 0.008224 +- 1.671e-05 pb
 0.003638 +- 8.147e-06 pb
 0.001799 +- 5.016e-06 pb
