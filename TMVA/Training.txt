@@ -1,0 +1,37 @@
+the track bdt is trained for each year separately (2016pre, 2016post, 2017, 2018) by using for the
+- signal MC : 300k tracks from LLP at ctau=100cm and with a broad smuon mass range (200, 250, 300, 400, 500 GeV)  with the usual neutralino mass sub-binnings)
+- background : 300k tracks from filtered emu real data and equi-distributed along each year
+
+The xml are on my area : /opt/sbg/cms/ui2_data1/blochd/CMSSW_10_6_30_FLY/src/FlyingTop/FlyingTop/test
+as
+BDT_TRK_240619_2016pre_ctau100vsEMUdata.xml using bdtcut = 0.92
+
+BDT_TRK_240619_2016post_ctau100vsEMUdata.xml using bdtcut = 0.93
+
+BDT_TRK_240522_2017_ctau100vsEMUdata_NOchi2NOdxyNOdz.xm using bdtcut = 0.94 (unchanged)
+
+BDT_TRK_240510_ctau100vsEMUdata_NOchi2NOdxyNOdz.xml using bdtcut = 0.94 (unchanged)
+
+So the bdtcut value is year dependent and should be updated in the FlyingTop.cc code
+
+The bdtcut changes for 2016 can be explained by the previously used pixel detector (with one layer less) and the less good silicon microstrip tracker and tracking in its first period.
+
+It allows for a roughly constant efficiency to get secondary vertices along the 4 years, in the real data emu samples:
+
+year                          2016pre                    2016post                  2017                          2018
+
+Lumi (fb-1)               19.5                           16.8                           41.5                           59.8
+
+filtered events         163277                      149787                     383681                      558414
+
+tracks / event          2644864                    3438657                  10152600                  14106270
+
+BDT cut                    > 0.92                         > 0.93                       > 0.94                         > 0.94
+
+selected / track       7245 / 0.0027           6676 / 0.0019          18230 / 0.0018         28200 / 0.0020
+
+               / hemi                / 0.022                      / 0.022                       / 0.024                      / 0.025    
+
+valid Vtx  / hemi     9878 / 0.030             15318 / 0.051           45232 / 0.059           58049 / 0.052
+
+Tight Vtx / hemi        271 / 0.00083             230 / 0.00077           598 / 0.00078           766 / 0.00069
