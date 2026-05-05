@@ -1,0 +1,30 @@
+imax    * number of bins
+jmax    1 number of processes minus 1
+kmax    * number of nuisance parameters
+
+--------------------------------------------------------------------------------
+shapes RPV_YEAR_smuXXX_neuYYY_ctauZZZ_tighthighpt_signal_region_   tighthighpt_signal_region_ tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes DD                                                             tighthighpt_signal_region_ tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes data_obs                                                       tighthighpt_signal_region_ tighthighpt_signal_region.root $PROCESS
+--------------------------------------------------------------------------------
+bin          tighthighpt_signal_region_ 
+observation  -1        
+--------------------------------------------------------------------------------
+bin                      tighthighpt_signal_region_                                   tighthighpt_signal_region_  
+process                  RPV_YEAR_smuXXX_neuYYY_ctauZZZ_tighthighpt_signal_region_              DD                     
+process                  -1                 1              
+rate                     -1                 -1        
+--------------------------------------------------------------------------------                                                                
+LumiYEAR                        lnN    LUMIUNC        -                                       
+PUYEAR                          shape   1           -  
+TopPt                           shape   1           -   
+XS                              lnN     XSUNC       -  
+TriggerYEAR                     shape   1           -
+L1YEAR                          shape   1           -     
+MuonIDYEAR                      shape   1           -
+MuonISOYEAR                     shape   1           -
+JECYEAR                         shape   1           -
+JERYEAR                         shape   1           -
+NormYEAR                        lnN     -           1.5
+VtxYEAR                         shape   1           -
+* autoMCStats 0

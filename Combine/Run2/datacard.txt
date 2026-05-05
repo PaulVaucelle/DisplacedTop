@@ -1,0 +1,28 @@
+imax    * number of bins
+jmax    1 number of processes minus 1
+kmax    * number of nuisance parameters
+
+--------------------------------------------------------------------------------
+shapes RPV_2016_smu600_neu580_ctau1000_tighthighpt_signal_region_   tighthighpt_signal_region_    /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run2/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2016_smu600_neu580_ctau1000/tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes hToys                                                          tighthighpt_signal_region_ /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run2/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2016_smu600_neu580_ctau1000/tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes data_obs                                                       tighthighpt_signal_region_ /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run2/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2016_smu600_neu580_ctau1000/tighthighpt_signal_region.root $PROCESS
+--------------------------------------------------------------------------------
+bin          tighthighpt_signal_region_ 
+observation  -1        
+--------------------------------------------------------------------------------
+bin                      tighthighpt_signal_region_                                   tighthighpt_signal_region_  
+process                  RPV_2016_smu600_neu580_ctau1000_tighthighpt_signal_region_              hToys                  
+process                  -1                 1              
+rate                     -1                 -1        
+--------------------------------------------------------------------------------                                                                
+Lumi2016                        lnN    1.012000        -                                       
+PU2016                          shape   1           -  
+TopPt                           shape   1           -   
+XS                              lnN     1.110000       -  
+Trigger2016                     shape   1           -
+L12016                          shape   1           -     
+MuonID2016                      shape   1           -
+MuonISO2016                     shape   1           -
+Norm2016                        lnN     -           1.5
+Vtx2016                         shape   1           -
+* autoMCStats 0
