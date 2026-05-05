@@ -1,0 +1,30 @@
+imax    * number of bins
+jmax    1 number of processes minus 1
+kmax    * number of nuisance parameters
+
+--------------------------------------------------------------------------------
+shapes RPV_2022A_Msmu-500_Mchi-480_ct-1000_tighthighpt_signal_region_  tighthighpt_signal_region_ /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run3/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2022A_Msmu-500_Mchi-480_ct-1000/tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes hToys                                                          tighthighpt_signal_region_ /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run3/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2022A_Msmu-500_Mchi-480_ct-1000/tighthighpt_signal_region.root $PROCESS $PROCESS$SYSTEMATIC
+shapes data_obs                                                       tighthighpt_signal_region_ /opt/sbg/cms/ui2_data1/pvaucell/CMSSW_11_3_4/src/HiggsAnalysis/CombinedLimit/data/RPV_Run3/ABCD_MUMU_DM_OS_2p4_2Vtx_EventBDT/RPV_2022A_Msmu-500_Mchi-480_ct-1000/tighthighpt_signal_region.root $PROCESS
+--------------------------------------------------------------------------------
+bin          tighthighpt_signal_region_ 
+observation  -1        
+--------------------------------------------------------------------------------
+bin                      tighthighpt_signal_region_                                   tighthighpt_signal_region_  
+process                  RPV_2022A_Msmu-500_Mchi-480_ct-1000_tighthighpt_signal_region_              hToys                  
+process                  -1                 1              
+rate                     -1                 -1        
+--------------------------------------------------------------------------------                                                                
+Lumi2022A                        lnN    1.014000        -                                       
+PU2022A                          shape   1           -  
+TopPt                           shape   1           -   
+XS                              lnN     1.098000       -  
+Trigger2022A                     shape   1           -
+L12022A                          shape   1           -     
+MuonID2022A                      shape   1           -
+MuonISO2022A                     shape   1           -
+JEC2022A                         shape   1           -
+JER2022A                         shape   1           -
+Norm2022A                        lnN     -           1.5
+Vtx2022A                         shape   1           -
+* autoMCStats 0
