@@ -1,0 +1,291 @@
+{
+    "NUM_IsoMu27_or_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_DEN_probe_MiniIsoTight": {
+        "abseta_pt": {
+            "abseta:[0.0,0.9]": {
+                "pt:[15,20]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[20,25]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[25,30]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[30,40]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[40,50]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[50,60]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[60,120]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                }
+            },
+            "abseta:[0.9,1.2]": {
+                "pt:[15,20]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[20,25]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[25,30]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[30,40]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[40,50]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[50,60]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[60,120]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                }
+            },
+            "abseta:[1.2,2.1]": {
+                "pt:[15,20]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[20,25]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[25,30]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[30,40]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[40,50]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[50,60]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[60,120]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                }
+            },
+            "abseta:[2.1,2.4]": {
+                "pt:[15,20]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[20,25]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[25,30]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[30,40]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[40,50]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[50,60]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                },
+                "pt:[60,120]": {
+                    "AltSig": 0.0,
+                    "massBin": 0.0,
+                    "massRange": 0.0,
+                    "stat": 0.4841,
+                    "syst": 0.0,
+                    "tagIso": 0.0,
+                    "value": 0.5
+                }
+            },
+            "binning": [
+                {
+                    "binning": [
+                        0.0,
+                        0.9,
+                        1.2,
+                        2.1,
+                        2.4
+                    ],
+                    "variable": "abseta"
+                },
+                {
+                    "binning": [
+                        15,
+                        20,
+                        25,
+                        30,
+                        40,
+                        50,
+                        60,
+                        120
+                    ],
+                    "variable": "pt"
+                }
+            ]
+        }
+    }
+}

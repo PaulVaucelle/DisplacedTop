@@ -1,0 +1,688 @@
+{
+    "schema_version": 1,
+    "corrections": [
+        {
+            "name": "NUM_IsoMu27_or_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_DEN_probe_MiniIsoTight",
+            "description": "NUM_IsoMu27_or_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_DEN_probe_MiniIsoTight",
+            "version": 1,
+            "inputs": [
+                {
+                    "name": "abseta",
+                    "type": "real"
+                },
+                {
+                    "name": "pt",
+                    "type": "real"
+                },
+                {
+                    "name": "uncertainties",
+                    "type": "string"
+                }
+            ],
+            "output": {
+                "name": "weight",
+                "type": "real"
+            },
+            "data": {
+                "nodetype": "binning",
+                "edges": [
+                    0.0,
+                    0.9,
+                    1.2,
+                    2.1,
+                    2.4
+                ],
+                "content": [
+                    {
+                        "nodetype": "binning",
+                        "edges": [
+                            15.0,
+                            20.0,
+                            25.0,
+                            30.0,
+                            40.0,
+                            50.0,
+                            60.0,
+                            120.0
+                        ],
+                        "content": [
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nodetype": "binning",
+                        "edges": [
+                            15.0,
+                            20.0,
+                            25.0,
+                            30.0,
+                            40.0,
+                            50.0,
+                            60.0,
+                            120.0
+                        ],
+                        "content": [
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nodetype": "binning",
+                        "edges": [
+                            15.0,
+                            20.0,
+                            25.0,
+                            30.0,
+                            40.0,
+                            50.0,
+                            60.0,
+                            120.0
+                        ],
+                        "content": [
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nodetype": "binning",
+                        "edges": [
+                            15.0,
+                            20.0,
+                            25.0,
+                            30.0,
+                            40.0,
+                            50.0,
+                            60.0,
+                            120.0
+                        ],
+                        "content": [
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            {
+                                "nodetype": "category",
+                                "keys": [
+                                    "value",
+                                    "stat",
+                                    "syst",
+                                    "AltSig",
+                                    "tagIso",
+                                    "massBin",
+                                    "massRange"
+                                ],
+                                "content": [
+                                    0.5,
+                                    0.4841,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
